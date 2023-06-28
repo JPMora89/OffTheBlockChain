@@ -21,6 +21,7 @@ const CoinTable = () => {
   const [watchlist, setWatchlist] = useState([]);
   const [watchlists, setWatchlists] = useState([]);
   const [newWatchlistName, setNewWatchlistName] = useState('');
+  const [selectedWatchlist, setSelectedWatchlist] = useState('');
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -47,15 +48,33 @@ const CoinTable = () => {
   // console.log(coins)
 
 
+  // const addToWatchlist = (coinId) => {
+  //   if (!coins.includes(coinId)) {
+  //       console.log(coinId)
+  //     setWatchlist([...watchlist, coinId]);
+  //     setUserCoins([coinId,...userCoins]);
+  //     console.log(userCoins)
+  //   }
+  // };
+// Add to watchlist with dropdown menu option
   const addToWatchlist = (coinId) => {
     if (!coins.includes(coinId)) {
-        console.log(coinId)
-      setWatchlist([...watchlist, coinId]);
-      setUserCoins([coinId,...userCoins]);
-      console.log(userCoins)
+      // Check if a watchlist is selected
+      if (selectedWatchlist) {
+        // Find the selected watchlist from the watchlists array
+        const selectedWatchlistObj = watchlists.find(
+          (watchlist) => watchlist.id === selectedWatchlist
+        );
+        if (selectedWatchlistObj) {
+          // Update the watchlist's coin array with the new coinId
+          selectedWatchlistObj.coins.push(coinId);
+          setWatchlists([...watchlists]); // Update the watchlists state
+        }
+      }
+      setUserCoins([coinId, ...userCoins]);
     }
   };
-
+  
 
 
   const removeFromWatchlist = (coinId) => {
@@ -104,6 +123,17 @@ const CoinTable = () => {
         <p>Loading...</p>
       ) : (
         <>
+              <select
+        value={selectedWatchlist}
+        onChange={(e) => setSelectedWatchlist(e.target.value)}
+      >
+        <option value="">Select Watchlist</option>
+        {watchlists.map((watchlist) => (
+          <option key={watchlist.id} value={watchlist.id}>
+            {watchlist.name}
+          </option>
+        ))}
+      </select>
           <table>
             <thead>
               <tr>

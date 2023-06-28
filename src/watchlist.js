@@ -28,7 +28,8 @@ console.log(watchlist.name)
   return (
     
     <div>
-      <h2>Watchlist</h2>
+      <h2>      {watchlist.name}
+</h2>
       {watchlist.length === 0 ? (
         <p>No coins added to watchlist.</p>
       ) : (

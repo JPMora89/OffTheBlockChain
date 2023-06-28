@@ -113,6 +113,14 @@ class OtbcApi {
         let res = await this.request(`watchlist/${coin_name}`);
         return res.coin;
     }
+// ...
+
+  static async createWatchlist(name) {
+  let res = await this.request('watchlist/', { name }, 'post');
+  return res.watchlist;
+}
+
+// ...
 
 
 
