@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OtbcApi from './api';
+import OtbcApi from '../api';
 
 const CreateWatchlist = ({ onCreateWatchlist }) => {
   const [watchlistName, setWatchlistName] = useState('');

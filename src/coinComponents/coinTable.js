@@ -3,14 +3,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import CoinDetail from './CoinsDetail';
-import Watchlist from './watchlist';
+import Watchlist from '../watchlistComponents/watchlist';
 import {Helmet} from 'react-helmet';
-import OtbcApi from './api';
-import CreateWatchlist from './CreateWatchlist';
-import WatchlistContainer from './WatchlistContainer';
+import OtbcApi from '../api';
+import CreateWatchlist from '../watchlistComponents/CreateWatchlist';
+import WatchlistContainer from '../watchlistComponents/WatchlistContainer';
 import { v4 as uuidv4 } from 'uuid';
-import { UserCoinsContext } from './userCoinContext';
-import { UserCoinsProvider } from './userCoinContext';
+import { UserCoinsContext } from '../userCoinContext';
+import { UserCoinsProvider } from '../userCoinContext';
 
 const CoinTable = () => {
   const [ userCoins, setUserCoins] = useState([]);

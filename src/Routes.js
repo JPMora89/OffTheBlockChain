@@ -1,19 +1,19 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Homepage from './Homepage';
-import Watchlist from "./watchlist";
-import CoinDetail from "./CoinsDetail";
-import KnowledgeComponent from "./KnowledgeComponent";
-import KnowledgeContainer from "./KnowledgeContainer";
-import coinTable from "./coinTable";
+import Watchlist from "./watchlistComponents/watchlist";
+import CoinDetail from "./coinComponents/CoinsDetail";
+import KnowledgeComponent from "./knowledgeComponents/KnowledgeComponent";
+import KnowledgeContainer from "./knowledgeComponents/KnowledgeContainer";
+import coinTable from "./coinComponents/coinTable";
 
 
 
-import LoginForm from './LoginForm';
+import LoginForm from './userComponents/LoginForm';
 
-import SignupForm from './SignupForm';
+import SignupForm from './userComponents/SignupForm';
 import HomeAnon from "./HomeAnon";
-import CoinTable from "./coinTable";
+import CoinTable from "./coinComponents/coinTable";
 
 function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchlist, addToWatchlist }) {
   return (

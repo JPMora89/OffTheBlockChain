@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import './Homepage.css';
-import userContext from './userContext';
+import userContext from './userComponents/userContext';
 import {Link} from 'react-router-dom';
-import CoinTable from './coinTable';
+import CoinTable from './coinComponents/coinTable';
 
 
 

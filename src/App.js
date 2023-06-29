@@ -8,10 +8,10 @@ import Routes from './Routes';
 import NavBar from './navbar';
 import OtbcApi from './api';
 import useLocalStorage from './useLocalStorage';
-import userContext from './userContext';
+import userContext from './userComponents/userContext';
 import Homepage from './Homepage';
-import CreateWatchlist from './CreateWatchlist';
-import WatchlistContainer from './WatchlistContainer';
+import CreateWatchlist from './watchlistComponents/CreateWatchlist';
+import WatchlistContainer from './watchlistComponents/WatchlistContainer';
 import { UserCoinsProvider } from './userCoinContext';
 
 
@@ -58,6 +58,7 @@ const login = async (loginFormData) => {
       const res = await OtbcApi.getUser(username);
       setUserInfo(res);
       console.log(res)
+      console.log(username)
     }
 
     // check if there is a token

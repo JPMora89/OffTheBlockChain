@@ -1,8 +1,8 @@
 import React from 'react';
 import {useContext} from 'react';
 import CreateWatchlist from './CreateWatchlist';
-import { UserCoinsContext } from './userCoinContext';
-import { UserCoinsProvider } from './userCoinContext';
+import { UserCoinsContext } from '../userCoinContext';
+import { UserCoinsProvider } from '../userCoinContext';
 
 const Watchlist = ({ watchlist, coins, removeFromWatchlist, addToWatchlist }) => {
   const getCoinById = (coinId) => {

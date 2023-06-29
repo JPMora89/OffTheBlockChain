@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import userContext from './userContext';
+import userContext from './userComponents/userContext';
 import {Link} from 'react-router-dom';
 // import './HomeAnon.css';
 
