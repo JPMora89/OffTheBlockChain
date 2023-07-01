@@ -54,30 +54,20 @@ class OtbcApi {
     let res = await this.request(`coins/${coin_name}`, {name: coin_name});
     return res.coins;
   }
-
-  // static async addCoin(coins){
-  //   let res = await this.request('coins/update', coins, 'post');
-  //   return res;
-  // }
+// Adding coins to coinlist section
 
   static async addCoin(coin, watchlistId) {
     let res = await this.request('coins/update', coin, 'post');
     
-    // Check if the coin was added successfully
     if (res.message === 'Coin added to watchlist') {
-      // Add the coin to the specified watchlist
       await this.addToWatchlist(coin.coinId, watchlistId);
     }
     
     return res;
   }
-  
 
-  static async addToWatchlist(coinId, watchlistId) {
-    let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'post');
-    return res;
-  }
-  
+
+
 
   // watchlist routes
   static async watchlist() {
@@ -113,13 +103,19 @@ class OtbcApi {
     return res.user;
   }
 
-    static async addToWatchlist(coin_name) {
-        let res = await this.request(`watchlist/${coin_name}`, {}, 'post');
-        return res;
-    }
+    // static async addToWatchlist(coin_name) {
+    //     let res = await this.request(`watchlist/${coin_name}`, {}, 'post');
+    //     return res;
+    // }
+  // Add coin to watchlist
 
-    static async removeFromWatchlist(coin_name) {
-        let res = await this.request(`watchlist/${coin_name}`, {}, 'delete');
+  static async addToWatchlist(coinId, watchlistId) {
+    let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'post');
+    return res;
+  }
+  
+    static async removeFromWatchlist(coinId, watchlistId) {
+        let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'delete');
         return res;
     }
 

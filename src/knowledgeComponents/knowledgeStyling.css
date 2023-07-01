@@ -1,0 +1,97 @@
+/* styles.css */
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Heading styles */
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Knowledge component styles */
+  .knowledge-component {
+    margin-bottom: 30px;
+    max-width: 600px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35%;
+
+  }
+  
+  .knowledge-component h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .knowledge-component p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .knowledge-component p:last-child {
+    margin-bottom: 0;
+  }
+
+  .knowledge-component {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .knowledge-component__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .knowledge-component__content {
+    margin-top: 10px;
+  }
+  
+  /* Add styles for the "How to Get Started Trading Crypto" section */
+
+#knowledge-section .step {
+    margin-bottom: 1.5rem;
+  }
+  
+  #knowledge-section .step-number {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  #knowledge-section .step-content {
+    margin-left: 2rem;
+  }
+  /* Add styles for the "Knowledge" section */
+
+#knowledge-section h2 {
+    margin-top: 2rem;
+  }
+  
+  #knowledge-section ol {
+    margin-left: 2rem;
+  }
+  
+  #knowledge-section ol li {
+    margin-bottom: 1.5rem;
+  }
+  
+  #knowledge-section p {
+    margin-bottom: 1.5rem;
+  }
+  
+
+
+  
+  /* Add more custom styles as needed */
+  
+  

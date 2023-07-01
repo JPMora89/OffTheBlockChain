@@ -12,12 +12,10 @@ const Watchlist = ({ watchlist, coins, removeFromWatchlist, addToWatchlist }) =>
   // const watchlist = [];
 
   const handleRemoveFromWatchlist = (coinId) => {
-    // Call the removeFromWatchlist function passed as a prop
     removeFromWatchlist(coinId);
   };
 
   const handleAddToWatchlist = (coinId) => {
-    // Call the addToWatchlist function passed as a prop
     addToWatchlist(coinId);
   };
 
