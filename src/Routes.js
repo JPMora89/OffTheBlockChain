@@ -6,7 +6,9 @@ import CoinDetail from "./coinComponents/CoinsDetail";
 import KnowledgeComponent from "./knowledgeComponents/KnowledgeComponent";
 import KnowledgeContainer from "./knowledgeComponents/KnowledgeContainer";
 import coinTable from "./coinComponents/coinTable";
-
+import WatchlistContainer from "./watchlistComponents/WatchlistContainer";
+import WatchlistPage from "./watchlistComponents/WatchlistPage";
+import CoinDetailsPage from "./coinComponents/CoinDetailsPage";
 
 
 import LoginForm from './userComponents/LoginForm';
@@ -23,7 +25,7 @@ function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchl
         {token ? <Homepage/> : <HomeAnon/>}
         </Route>
         <Route exact path="/watchlist">
-          {token ? (<Watchlist watchlist={watchlist} coins={coins} removeFromWatchlist={removeFromWatchlist} addToWatchlist={addToWatchlist}/>) : <Redirect to='/login'/>}
+          {token ? (<WatchlistPage/>) : <Redirect to='/login'/>}
         </Route>
         <Route exact path="/coinDetail">
           {token ? <CoinDetail/> : <Redirect to='/login'/>}
@@ -33,6 +35,9 @@ function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchl
         </Route>
         <Route exact path="/coins">
           {token ? <CoinTable/> : <Redirect to='/login'/>}
+        </Route>
+        <Route exact path="/coin/:coinId"> 
+          {token ? <CoinDetailsPage/> : <Redirect to='/login'/>} 
         </Route>
 
         <Route exact path="/login">

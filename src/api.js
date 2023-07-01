@@ -55,10 +55,29 @@ class OtbcApi {
     return res.coins;
   }
 
-  static async addCoin(coins){
-    let res = await this.request('coins/update', coins, 'post');
+  // static async addCoin(coins){
+  //   let res = await this.request('coins/update', coins, 'post');
+  //   return res;
+  // }
+
+  static async addCoin(coin, watchlistId) {
+    let res = await this.request('coins/update', coin, 'post');
+    
+    // Check if the coin was added successfully
+    if (res.message === 'Coin added to watchlist') {
+      // Add the coin to the specified watchlist
+      await this.addToWatchlist(coin.coinId, watchlistId);
+    }
+    
     return res;
   }
+  
+
+  static async addToWatchlist(coinId, watchlistId) {
+    let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'post');
+    return res;
+  }
+  
 
   // watchlist routes
   static async watchlist() {
@@ -119,6 +138,33 @@ class OtbcApi {
   let res = await this.request('watchlist/', { name }, 'post');
   return res.watchlist;
 };
+
+// watchlist routes
+static async getAllWatchlists() {
+  let res = await this.request('watchlist/');
+  return res.watchlists;
+}
+
+  // Retrieve watchlists from the backend and ensure they are available
+  // every time the page reloads
+  static async getWatchlists() {
+    let watchlists;
+    try {
+      watchlists = await this.getAllWatchlists();
+    } catch (error) {
+      console.error('Error retrieving watchlists:', error);
+      watchlists = [];
+    }
+    return watchlists;
+  }
+
+  static async updateWatchlist(watchlistId, updatedWatchlist) {
+    let res = await this.request(`watchlist/${watchlistId}`, updatedWatchlist, 'patch');
+    return res.watchlist;
+  }
+  
+
+
 }
 
 

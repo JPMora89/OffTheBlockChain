@@ -21,8 +21,8 @@ const Watchlist = ({ watchlist, coins, removeFromWatchlist, addToWatchlist }) =>
     addToWatchlist(coinId);
   };
 
-
-console.log(watchlist.name)
+// console.log(coinId)
+// console.log(watchlist.name)
 
 
   return (
