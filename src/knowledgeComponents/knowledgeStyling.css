@@ -1,28 +1,29 @@
-/* styles.css */
 
-/* Container styles */
+
 .container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
-  
-  /* Heading styles */
+
   h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
   }
   
-  /* Knowledge component styles */
   .knowledge-component {
     margin-bottom: 30px;
     max-width: 600px;
     align-content: center;
     align-items: center;
     justify-content: center;
-    margin-left: 35%;
-
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .knowledge-component h2 {
@@ -41,12 +42,7 @@
     margin-bottom: 0;
   }
 
-  .knowledge-component {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+
   
   .knowledge-component__title {
     font-size: 18px;
@@ -57,7 +53,6 @@
     margin-top: 10px;
   }
   
-  /* Add styles for the "How to Get Started Trading Crypto" section */
 
 #knowledge-section .step {
     margin-bottom: 1.5rem;
@@ -71,7 +66,6 @@
   #knowledge-section .step-content {
     margin-left: 2rem;
   }
-  /* Add styles for the "Knowledge" section */
 
 #knowledge-section h2 {
     margin-top: 2rem;
@@ -89,9 +83,99 @@
     margin-bottom: 1.5rem;
   }
   
+  .headerImage{
+    width: 100%;
+    height: 30%;
+    height: 600px;
+    margin-bottom: -10%;
+
+  }
+
+  
+
+
+#topic-1 {
+  display: inline-block;
+  vertical-align: top;
+    color: rgb(255, 5, 5);
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    height: 100%;
+  }
 
 
   
-  /* Add more custom styles as needed */
+
+#topic-2 {
+  display: inline-block;
+  vertical-align: top;
+    color: rgb(255, 5, 5);
+    margin-top: 10%;
+    margin-right: 5%;
+    /* margin-left: -10%; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    height: 100%;
   
+  }
+
+
+  /* #topic-1,
+#topic-2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%; 
+  margin-left: 10%;
+  margin-right: -3%;
+  
+} */
+#topic-3 {
+  margin-left: 5%;
+}
+
+#topic-3,
+#topic-4,
+#topic-5 {
+  color: rgb(255, 5, 5);
+  display: inline-block;
+  vertical-align: top;
+  width: 30%; 
+  margin: 10px;
+
+  
+}
+
+.imageDiv {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%; 
+  margin: 10px;
+  margin-left: 10%;
+  margin-right: -3%;
+  /* margin-top: -20%; */
+  
+}
+
+.defi {
+  display: inline-block;
+  margin-top: -155%;
+  vertical-align: top;
+  max-width: 50%;
+  margin-left: -15%;
+}
+.dapps {
+  display: inline-block;
+  margin-top: -160%;
+  margin-left: 120%;
+  vertical-align: top;
+  max-width: 50%;
+}
+
   

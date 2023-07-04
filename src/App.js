@@ -115,9 +115,7 @@ const login = async (loginFormData) => {
       
 
           />
-          {/* <Homepage /> */}
-          {/* <CreateWatchlist onCreateWatchlist={createWatchlist} />
-      <WatchlistContainer watchlists={watchlists} /> */}
+
 
         </userContext.Provider>
       </BrowserRouter>

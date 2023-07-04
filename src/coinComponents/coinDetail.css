@@ -1,0 +1,37 @@
+#coinLogo {
+justify-content: center;
+margin-left: 43%;
+margin-bottom: 7%;
+}
+
+#coinDetailHeader {
+    margin-bottom: 5%;
+    margin-top: -12%;
+    color: red;
+}
+
+#coindDetailDescription {
+    max-width: 70%;
+    margin-left: 15%;
+}
+
+#coinMarketData {
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: red;
+}
+
+
+.coinNews {
+    /* margin-left: 10%; */
+    margin-top: 10%;
+    margin-bottom: 5%;
+    color: red;
+
+
+}
+
+.coinMarketDataHeader {
+    color: red;
+}

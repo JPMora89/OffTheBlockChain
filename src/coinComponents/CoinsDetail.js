@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CoinNews from './coinNews';
+import './coinDetail.css';
 
 const CoinDetail = ({ coinId }) => {
   const [coinData, setCoinData] = useState(null);
@@ -36,19 +37,28 @@ const CoinDetail = ({ coinId }) => {
   const { homepage, official_forum_url, twitter_screen_name } = links;
 
   return (
+    <>
     <div>
-      <h1>{name} ({symbol.toUpperCase()})</h1>
-      <img src={image.large} alt={name} />
-      <p>{description?.en || 'Description not available.'}</p>
+      <h1 id='coinDetailHeader'>{name} ({symbol.toUpperCase()})</h1>
+      <img src={image.large} alt={name}  id='coinLogo'/>
+      <p id='coindDetailDescription'>{description?.en || 'Description not available.'}</p>
+      <div id='coinMarketData'>
+      <h2 id='coinMarketDataHeader'>Market Data</h2>
       <p>Current Price: ${current_price.usd}</p>
       <p>Market Cap: ${market_cap.usd}</p>
       <p>Total Volume: ${total_volume.usd}</p>
-      <p>Homepage: {homepage}</p>
-      <p>Official Forum: {official_forum_url}</p>
-      <p>Twitter: {twitter_screen_name}</p>
-        <CoinNews coinId={coinId} />
+      {/* <p>Homepage: {homepage}</p> */}
+      <p>Homepage: <a href={homepage} target='_blank' rel='noopener noreferrer'>{homepage}</a></p>
+      {/* <p>Official Forum: {official_forum_url}</p> */}
+      <p>Official Forum: <a href={official_forum_url} target='_blank' rel='noopener noreferrer'>{official_forum_url}</a></p>
+      {/* <p>Twitter: {twitter_screen_name}</p> */}
+      <p>Twitter: <a href={`https://twitter.com/${twitter_screen_name}`} target='_blank' rel='noopener noreferrer'>{twitter_screen_name}</a></p>
+                    <CoinNews coinId={coinId} className="coinNews" />
+
     </div>
-    
+
+    </div>
+</>
   );
 };
 

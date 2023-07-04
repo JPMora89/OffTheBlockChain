@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import OtbcApi from '../api';
+import WatchlistPage from './WatchlistPage';
 
-const CreateWatchlist = ({ onCreateWatchlist }) => {
+const CreateWatchlist = ({updateWatchlist}) => {
   const [watchlistName, setWatchlistName] = useState('');
 
   const handleInputChange = (event) => {
@@ -15,8 +16,10 @@ const CreateWatchlist = ({ onCreateWatchlist }) => {
       // Call the API function to create a new watchlist
       await OtbcApi.createWatchlist(watchlistName);
       console.log(`Watchlist "${watchlistName}" created`);
-      onCreateWatchlist(watchlistName);
+      const updatedWatchlists = await OtbcApi.getAllWatchlists();
+      updateWatchlist(updatedWatchlists);
       setWatchlistName('');
+      console.log(watchlistName)
     } catch (error) {
       console.error('Error creating watchlist:', error);
     }

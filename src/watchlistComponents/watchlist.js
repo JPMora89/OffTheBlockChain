@@ -3,14 +3,13 @@ import {useContext} from 'react';
 import CreateWatchlist from './CreateWatchlist';
 import { UserCoinsContext } from '../userCoinContext';
 import { UserCoinsProvider } from '../userCoinContext';
+import OtbcApi from '../api';
 
-const Watchlist = ({ watchlist, coins, removeFromWatchlist, addToWatchlist }) => {
+const Watchlist = ({ watchlist, watchlist_id, coins, removeFromWatchlist, addToWatchlist }) => {
   const getCoinById = (coinId) => {
     return coins.find((coin) => coin.id === coinId);
   };
-
-  // const watchlist = [];
-
+console.log(watchlist)
   const handleRemoveFromWatchlist = (coinId) => {
     removeFromWatchlist(coinId);
   };
@@ -19,8 +18,18 @@ const Watchlist = ({ watchlist, coins, removeFromWatchlist, addToWatchlist }) =>
     addToWatchlist(coinId);
   };
 
-// console.log(coinId)
 // console.log(watchlist.name)
+const handleDeleteWatchlist = async () => {
+  try {
+    await OtbcApi.deleteWatchlist(watchlist.watchlist_id);
+    console.log(watchlist.watchlist_id)
+    // Update the state or perform any necessary actions after successful deletion
+  } catch (error) {
+    console.error('Error deleting watchlist:', error);
+  }
+};
+
+
 
 
   return (
@@ -28,7 +37,7 @@ const Watchlist = ({ watchlist, coins, removeFromWatchlist, addToWatchlist }) =>
     <div>
       <h2>      {watchlist.name}
 </h2>
-      {watchlist.length === 0 ? (
+      {watchlist.length === undefined ? (
         <p>No coins added to watchlist.</p>
       ) : (
         <ul>
@@ -42,6 +51,8 @@ const Watchlist = ({ watchlist, coins, removeFromWatchlist, addToWatchlist }) =>
           })}
         </ul>
       )}
+          {/* <button onClick={() => handleDeleteWatchlist()}>Delete Watchlist</button> */}
+      <button onClick={() => handleDeleteWatchlist(watchlist.watchlist_id)}>Delete Watchlist</button>
     </div>
    
   );

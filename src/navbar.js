@@ -82,7 +82,7 @@ function NavBar({ currentUser, logout}) {
 
   return (
     <div>
-    <Navbar expand="lg" variant="dark" bg="dark">
+    <Navbar expand="lg" variant="dark" bg="black">
       <Container>
           <Navbar.Brand as={Link} to="/">Off The BlockChain</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -1,12 +1,19 @@
+
+
 import React from "react";
 import KnowledgeComponent from "./KnowledgeComponent";
+import blockchain from "../assets/images/blockchain.jpg";
+import defi from "../assets/images/defi.webp";
+import dApps from "../assets/images/dApps.jpg";
+
+import "./knowledgeStyling.css";
 
 
 
 const KnowledgeContainer = () => {
   const knowledgeTopics = [
     {
-      id: 1,
+      topicId: 1,
       title: "Introduction to Cryptocurrencies",
       content: `Cryptocurrencies have revolutionized the financial landscape, offering a decentralized and digital form of money that operates outside the control of traditional financial institutions. In this beginner's guide, we'll explore the fundamental concepts of cryptocurrencies and shed light on their growing significance.\n\n
     What is a Cryptocurrency?\n
@@ -32,7 +39,7 @@ const KnowledgeContainer = () => {
       Cryptocurrencies offer a range of applications beyond being a digital currency. They enable decentralized applications (DApps) and smart contracts on platforms like Ethereum. Additionally, cryptocurrencies facilitate cross-border payments, remittances, micropayments, and provide opportunities for investment and speculation.`
     },
     {
-      id: 2,
+      topicId: 2,
       title: "Blockchain Technology: The building blocks of trust and transparency",
       content: `Blockchain is a decentralized and distributed ledger technology that forms the foundation of many cryptocurrencies and other applications. It is often described as a digital, immutable, and transparent "chain" of blocks that contain records of transactions or information.
 
@@ -67,22 +74,22 @@ const KnowledgeContainer = () => {
       It's important to note that while blockchain technology has significant potential, it also faces challenges such as scalability, energy consumption, and regulatory considerations. Nonetheless, it continues to evolve and find applications beyond cryptocurrencies, impacting various industries and sectors.`
     },
     {
-      id: 3,
+      topicId: 3,
       title: "Decentralized Finance (DeFi)",
       content: `Decentralized Finance, also known as DeFi, refers to the use of blockchain technology and cryptocurrencies to recreate traditional financial systems in a decentralized manner. It aims to provide financial services such as lending, borrowing, and trading without relying on intermediaries like banks or brokers. DeFi platforms utilize smart contracts and blockchain interoperability to enable trustless and permissionless transactions. Some popular DeFi applications include decentralized exchanges (DEXs), lending platforms, stablecoins, and yield farming. DeFi has gained significant attention and adoption in recent years, contributing to the growth of the overall cryptocurrency ecosystem.`
     },
     {
-      id: 4,
+      topicId: 4,
       title: "Tokenization and Non-Fungible Tokens (NFTs)",
       content: `Tokenization refers to the process of representing real-world assets or digital items as tokens on a blockchain. Tokens can represent various assets such as real estate, artwork, intellectual property, or even virtual goods in video games. Non-Fungible Tokens (NFTs) are a type of token that represent unique digital assets. Unlike cryptocurrencies that are fungible and interchangeable, NFTs have distinct characteristics and cannot be replicated. NFTs have gained significant popularity in the art and collectibles space, enabling artists and creators to tokenize and sell their digital works in a secure and transparent manner.`
     },
     {
-      id: 5,
+      topicId: 5,
       title: "Smart Contracts and Decentralized Applications (DApps)",
       content: `Smart contracts are self-executing contracts with predefined rules and conditions encoded on a blockchain. They automatically execute transactions or actions when specific conditions are met. Smart contracts enable decentralized applications (DApps) to operate on blockchain platforms like Ethereum. DApps leverage the transparency, security, and immutability of blockchain to provide a wide range of services and functionalities, including financial applications, gaming platforms, supply chain management, and more. Developers can build and deploy smart contracts to create innovative and trustless applications that operate without central authorities.`
     },
     {
-      id: 6,
+      topicId: 6,
       title: "How to Get Started Trading Crypto",
       content: `Trading cryptocurrencies can be an exciting and potentially profitable endeavor. Here are some steps to help you get started:\n
     
@@ -124,16 +131,27 @@ const KnowledgeContainer = () => {
 
 
 return (
+  <>
+        <img src={blockchain} className="headerImage"></img>
+
   <div id="knowledge-section">
+
     <h1>Knowledge</h1>
     {knowledgeTopics.map((topic) => (
       <KnowledgeComponent
-        key={topic.id}
+        key={topic.topicId}
         title={topic.title}
         content={topic.content}
+        topicId={topic.topicId}
+        // className={`topic-${topic.id}`} 
       />
     ))}
   </div>
+  <div className="imageDiv">
+  <img src={defi} className="defi"></img>
+  <img src={dApps} className="dapps"></img>
+</div>
+  </>
 );
     }
 

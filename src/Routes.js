@@ -1,3 +1,63 @@
+// import React from "react";
+// import { Route, Switch, Redirect } from "react-router-dom";
+// import Homepage from './Homepage';
+// import Watchlist from "./watchlistComponents/watchlist";
+// import CoinDetail from "./coinComponents/CoinsDetail";
+// import KnowledgeComponent from "./knowledgeComponents/KnowledgeComponent";
+// import KnowledgeContainer from "./knowledgeComponents/KnowledgeContainer";
+// import coinTable from "./coinComponents/coinTable";
+// import WatchlistContainer from "./watchlistComponents/WatchlistContainer";
+// import WatchlistPage from "./watchlistComponents/WatchlistPage";
+// import CoinDetailsPage from "./coinComponents/CoinDetailsPage";
+// // import KnowledgePage from "./knowledgeComponents/KnowledgePage";
+// // import knowledgeTopics from "./knowledgeComponents/knowledgeTopics";
+
+
+
+// import LoginForm from './userComponents/LoginForm';
+
+// import SignupForm from './userComponents/SignupForm';
+// import HomeAnon from "./HomeAnon";
+// import CoinTable from "./coinComponents/coinTable";
+
+// function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchlist, addToWatchlist, knowledgeTopics }) {
+//   return (
+//     <div>
+//       <Switch>
+//         <Route exact path="/">
+//         {token ? <Homepage/> : <HomeAnon/>}
+//         </Route>
+//         <Route exact path="/watchlist">
+//           {token ? (<WatchlistPage/>) : <Redirect to='/login'/>}
+//         </Route>
+//         <Route exact path="/coinDetail">
+//           {token ? <CoinDetail/> : <Redirect to='/login'/>}
+//         </Route>
+//         <Route exact path="/knowledge">
+//           {token ? <KnowledgeContainer/> : <Redirect to='/login'/>}
+//         </Route>
+
+//         <Route exact path="/coins">
+//           {token ? <CoinTable/> : <Redirect to='/login'/>}
+//         </Route>
+//         <Route exact path="/coin/:coinId"> 
+//           {token ? <CoinDetailsPage/> : <Redirect to='/login'/>} 
+//         </Route>
+
+//         <Route exact path="/login">
+//           <LoginForm login={login}/>
+//         </Route>
+
+//         <Route exact path="/signup">
+//           <SignupForm register={register}/>
+//         </Route>
+//         <Redirect to="/" />
+//       </Switch>
+//     </div>
+//   );
+// }
+
+// export default UserRoutes;
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Homepage from './Homepage';
@@ -9,43 +69,41 @@ import coinTable from "./coinComponents/coinTable";
 import WatchlistContainer from "./watchlistComponents/WatchlistContainer";
 import WatchlistPage from "./watchlistComponents/WatchlistPage";
 import CoinDetailsPage from "./coinComponents/CoinDetailsPage";
-
-
 import LoginForm from './userComponents/LoginForm';
-
 import SignupForm from './userComponents/SignupForm';
 import HomeAnon from "./HomeAnon";
 import CoinTable from "./coinComponents/coinTable";
 
-function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchlist, addToWatchlist }) {
+function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchlist, addToWatchlist, knowledgeTopics }) {
   return (
     <div>
       <Switch>
         <Route exact path="/">
-        {token ? <Homepage/> : <HomeAnon/>}
+          {token ? <Homepage /> : <HomeAnon />}
         </Route>
         <Route exact path="/watchlist">
-          {token ? (<WatchlistPage/>) : <Redirect to='/login'/>}
+          {token ? <WatchlistPage /> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/coinDetail">
-          {token ? <CoinDetail/> : <Redirect to='/login'/>}
+          {token ? <CoinDetail /> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/knowledge">
-          {token ? <KnowledgeContainer/> : <Redirect to='/login'/>}
+          {token ? <KnowledgeContainer knowledgeTopics={knowledgeTopics} /> : <Redirect to="/login" />}
+        </Route>
+        <Route exact path="/knowledge/:topicId">
+          {token ? <KnowledgeComponent /> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/coins">
-          {token ? <CoinTable/> : <Redirect to='/login'/>}
+          {token ? <CoinTable /> : <Redirect to="/login" />}
         </Route>
-        <Route exact path="/coin/:coinId"> 
-          {token ? <CoinDetailsPage/> : <Redirect to='/login'/>} 
+        <Route exact path="/coin/:coinId">
+          {token ? <CoinDetailsPage /> : <Redirect to="/login" />}
         </Route>
-
         <Route exact path="/login">
-          <LoginForm login={login}/>
+          <LoginForm login={login} />
         </Route>
-
         <Route exact path="/signup">
-          <SignupForm register={register}/>
+          <SignupForm register={register} />
         </Route>
         <Redirect to="/" />
       </Switch>

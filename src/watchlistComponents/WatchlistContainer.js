@@ -1,13 +1,16 @@
 import React from 'react';
 import Watchlist from './watchlist';
+import { Route, Switch, Link } from "react-router-dom";
+import OtbcApi from '../api';
 
 
 
 
 
+const WatchlistContainer = ({ watchlists, coins, removeFromWatchlist, handleDeleteWatchlist }) => {
 
 
-const WatchlistContainer = ({ watchlists, coins, removeFromWatchlist }) => {
+
   return (
     <div>
       <h2>My Watchlists</h2>
@@ -19,8 +22,10 @@ const WatchlistContainer = ({ watchlists, coins, removeFromWatchlist }) => {
             <Watchlist
               key={watchlist.id}
               watchlist={watchlist}
+              watchlistId={watchlist.id}
               coins={coins}
               removeFromWatchlist={removeFromWatchlist}
+              handleDeleteWatchlist={handleDeleteWatchlist}
             />
           ) : null
         ))
@@ -30,7 +35,8 @@ const WatchlistContainer = ({ watchlists, coins, removeFromWatchlist }) => {
 };
 
 
+
+
+
+
 export default WatchlistContainer;
-
-
-

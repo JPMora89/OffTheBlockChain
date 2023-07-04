@@ -25,7 +25,7 @@ const CoinNews = ({ coinId }) => {
   }, [coinId]);
 
   return (
-    <div>
+    <div className="coinNews">
       <h2>Coin News</h2>
       {isLoading ? (
         <p>Loading news...</p>

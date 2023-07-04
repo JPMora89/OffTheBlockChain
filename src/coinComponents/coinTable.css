@@ -1,0 +1,76 @@
+
+  
+  .coin-table {
+    width: 48%;
+    margin-bottom: 20%;
+    background-color: #1f2434;
+    border: 1px solid white;
+    color: white;
+  }
+  
+  .coin-table th {
+    background-color: #1f2434;
+    color: white;
+    padding: 10px;
+  }
+  
+  .coin-table td {
+    padding: 10px;
+    color: white;
+  }
+  
+  .coin-table img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #topCoins {
+    background-color: black;
+  }
+  
+  #trendingCoins {
+    background-color: black;
+  }
+  
+  .livecoinwatch-widgets {
+    display: flex;
+    max-width: 1000px;
+    justify-content: center;
+    margin-left: 15%;
+    margin-top: 20px;
+  }
+  
+  .livecoinwatch-widget-1 {
+    flex: 1;
+  }
+  
+  #topCoinTable {
+    font: bold 20px 'Bebas Neue', sans-serif;
+    margin-left: 20%;
+    /* margin-top: -20%; */
+    margin-top: -50%;
+  }
+  
+  #coinlockimage {
+    max-width: 450px;
+    border: solid black 2px;
+    border-radius: 20px;
+    /* margin-left: 80%; */
+    margin-top: 30%;
+    margin-right: -25%;
+  }
+  
+  /* #coinTableContainer {
+    display: flex;
+  } */
+  
+  /* #coinTableContainer > div {
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+  } */
+  
+  #cryptocoins {
+    margin-left: -30%;
+    margin-right: 70%;
+  }

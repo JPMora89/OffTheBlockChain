@@ -111,6 +111,7 @@ class OtbcApi {
 
   static async addToWatchlist(coinId, watchlistId) {
     let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'post');
+    console.log(res)
     return res;
   }
   
@@ -159,6 +160,12 @@ static async getAllWatchlists() {
     return res.watchlist;
   }
   
+  static async deleteWatchlist(watchlistId) {
+    let res = await this.request(`watchlist/${watchlistId}`, {}, 'delete');
+        console.log(res)
+
+    return res;
+  }
 
 
 }
