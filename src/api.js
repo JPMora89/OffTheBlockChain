@@ -35,18 +35,51 @@ class OtbcApi {
   }
 
   // Individual API routes
+  static async login({username, password}) {
+    let res = await this.request('auth/token', {
+      username: username,
+      password: password},
+      "post");
+    this.token = res.token;
+    return res;
+  }
 
+  static async register(formData) {
+    let res = await this.request('auth/register', formData, 'post');
+    this.token = res.token;
+    return res;
+  }
+// Adding coins to coinlist section
+
+static async addAllCoinstoDB(){
+  let res = await this.request('coins/');
+
+  console.log(res);
+  return res;
+}
+
+
+
+
+  static async addAllCoins(coins){
+    let res = await this.request('coins/', coins, 'post');
+
+    console.log(res);
+    return res;
+  }
+ 
   /** Get details on a coin by name. */
 
-  static async getCoin(name) {
-    let res = await this.request(`coins/${name}`);
+
+  static async getCoin(id) {
+    let res = await this.request(`coins/${id}`);
         console.log(res.coin)
 
     return res.coin;
 
   }
   static async getAllCoins() {
-    let res = await this.request('coins/');
+    let res = await this.request('coins/all');
     return res.coins;
   }
 
@@ -54,9 +87,10 @@ class OtbcApi {
     let res = await this.request(`coins/${coin_name}`, {name: coin_name});
     return res.coins;
   }
-// Adding coins to coinlist section
 
-  static async addCoin(coin, watchlistId) {
+
+
+static async addCoin(coin, watchlistId) {
     let res = await this.request('coins/update', coin, 'post');
     
     if (res.message === 'Coin added to watchlist') {
@@ -68,27 +102,13 @@ class OtbcApi {
 
 
 
-
   // watchlist routes
   static async watchlist() {
     let res = await this.request('watchlist/');
     return res.watchlist;
   }
 
-  static async login({username, password}) {
-    let res = await this.request('auth/token', {
-      username: username,
-      password: password},
-      "post");
-    this.token = res;
-    return res;
-  }
 
-  static async register(formData) {
-    let res = await this.request('auth/register', formData, 'post');
-    this.token = res;
-    return res;
-  }
 
   static async getUser(username) {
     let res = await this.request(`user/${username}`);
@@ -141,6 +161,12 @@ static async getAllWatchlists() {
   let res = await this.request('watchlist/');
   return res.watchlists;
 }
+
+static async getWatchlistItems(watchlistId) {
+  let res = await this.request(`watchlist/${watchlistId}/items`);
+  return res.watchlistItems;
+}
+
 
   // Retrieve watchlists from the backend and ensure they are available
   // every time the page reloads

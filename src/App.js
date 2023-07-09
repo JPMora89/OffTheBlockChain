@@ -1,7 +1,7 @@
 
 
 import React, {useState, useEffect, createContext} from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import jwt from 'jsonwebtoken';
 import './App.css';
 import Routes from './Routes';
@@ -13,6 +13,7 @@ import Homepage from './Homepage';
 import CreateWatchlist from './watchlistComponents/CreateWatchlist';
 import WatchlistContainer from './watchlistComponents/WatchlistContainer';
 import { UserCoinsProvider } from './userCoinContext';
+import KnowledgeContainer from './knowledgeComponents/KnowledgeContainer';
 
 
 
@@ -23,9 +24,11 @@ function App() {
   const [userInfo, setUserInfo] = useState(USER_INIT_STATE);
   const [currentToken, setCurrentToken] = useLocalStorage('token');
   const [isLoading, setIsLoading] = useState(true);
-const [watchlist, setWatchlist] = useState([]);
-const [coins, setCoins] = useState([]);
-const [watchlists, setWatchlists] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
+  const [coins, setCoins] = useState([]);
+  const [watchlists, setWatchlists] = useState([]);
+  const [knowledgeTopics, setKnowledgeTopics] = useState([]);
+  const [userCoins, setUserCoins] = useState([]);
   
 
 const login = async (loginFormData) => {
@@ -93,7 +96,17 @@ const login = async (loginFormData) => {
   //   setWatchlist(updatedWatchlist);
     
   // };
-
+  const fetchAllWatchlists = async () => {
+    try {
+      const watchlists = await OtbcApi.getAllWatchlists();
+      setWatchlists(watchlists);
+      const userCoins = await OtbcApi.getAllCoins();
+      setUserCoins(userCoins);
+    } catch (error) {
+      console.error("Error fetching watchlists:", error);
+    }
+  };
+  
 
   return (
     <UserCoinsProvider>
@@ -105,13 +118,18 @@ const login = async (loginFormData) => {
             currentUser={currentUser} 
             logout={logout}
           />
-
+          
+          {/* <Route exact path="/" component={Homepage} /> 
+            <Route exact path="/watchlist" component={WatchlistContainer} /> 
+            <Route exact path="/watchlist/create" component={CreateWatchlist} />
+            <Route exact path="/knowledge" component={KnowledgeContainer} />  */}
           <Routes 
             login={login} 
             register={register}
             token={currentToken}
-            watchlist={watchlist}
-            coins={coins}
+            watchlists={watchlists}
+            userCoins={userCoins}
+            knowledgeTopics={knowledgeTopics}
       
 
           />
@@ -125,3 +143,4 @@ const login = async (loginFormData) => {
 }
 
 export default App;
+

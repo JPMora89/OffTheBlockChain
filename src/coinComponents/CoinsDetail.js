@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CoinNews from './coinNews';
+import OtbcApi from '../api';
 import './coinDetail.css';
 
 const CoinDetail = ({ coinId }) => {
@@ -44,9 +45,9 @@ const CoinDetail = ({ coinId }) => {
       <p id='coindDetailDescription'>{description?.en || 'Description not available.'}</p>
       <div id='coinMarketData'>
       <h2 id='coinMarketDataHeader'>Market Data</h2>
-      <p>Current Price: ${current_price.usd}</p>
-      <p>Market Cap: ${market_cap.usd}</p>
-      <p>Total Volume: ${total_volume.usd}</p>
+      <p>Current Price: ${current_price.usd.toLocaleString()}</p>
+      <p>Market Cap: ${market_cap.usd.toLocaleString()}</p>
+      <p>Total Volume: ${total_volume.usd.toLocaleString()}</p>
       {/* <p>Homepage: {homepage}</p> */}
       <p>Homepage: <a href={homepage} target='_blank' rel='noopener noreferrer'>{homepage}</a></p>
       {/* <p>Official Forum: {official_forum_url}</p> */}

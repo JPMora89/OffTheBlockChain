@@ -7,6 +7,7 @@ import CreateWatchlist from './CreateWatchlist';
 
 const WatchlistPage = () => {
     const [watchlists, setWatchlists] = useState([]);
+    const [userCoins, setUserCoins] = useState([]);
  
     
   
@@ -38,10 +39,11 @@ const WatchlistPage = () => {
         <Helmet>
           {/* Add any necessary script or link tags */}
         </Helmet>
+         <Link to="/">Back to Coins</Link>
         <h1>Watchlists</h1>
         <CreateWatchlist updateWatchlist={updateWatchlists}/>
-        <Link to="/">Back to Coins</Link>
-        <WatchlistContainer watchlists={watchlists}  />
+       
+        <WatchlistContainer watchlists={watchlists} userCoins={userCoins}  />
       </div>
     );
   };

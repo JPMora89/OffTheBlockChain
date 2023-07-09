@@ -3,15 +3,15 @@
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
   }
 
-  h1 {
+  /* h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-  }
+  } */
   
   .knowledge-component {
     margin-bottom: 30px;
@@ -24,6 +24,8 @@
     border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20%;
+    /* z-index: 999; */
   }
   
   .knowledge-component h2 {
@@ -38,6 +40,10 @@
     margin-bottom: 10px;
   }
   
+#knowledge-section{
+  margin-top: 7%;
+}
+
   .knowledge-component p:last-child {
     margin-bottom: 0;
   }
@@ -50,7 +56,7 @@
   }
   
   .knowledge-component__content {
-    margin-top: 10px;
+    margin-top: 10%;
   }
   
 
@@ -98,7 +104,7 @@
   display: inline-block;
   vertical-align: top;
     color: rgb(255, 5, 5);
-    margin-top: 10%;
+    margin-top: 16%;
     margin-left: 10%;
     margin-right: 5%;
     padding: 10px;
@@ -115,7 +121,7 @@
   display: inline-block;
   vertical-align: top;
     color: rgb(255, 5, 5);
-    margin-top: 10%;
+    margin-top: 16%;
     margin-right: 5%;
     /* margin-left: -10%; */
     padding: 10px;
@@ -148,20 +154,24 @@
   vertical-align: top;
   width: 30%; 
   margin: 10px;
+  margin-bottom: -15%;
 
   
 }
 
-.imageDiv {
+/* #topic-6 {
+ margin-top: -1%;
+} */
+
+/* .imageDiv {
   display: inline-block;
   vertical-align: top;
   width: 50%; 
   margin: 10px;
   margin-left: 10%;
   margin-right: -3%;
-  /* margin-top: -20%; */
   
-}
+} */
 
 .defi {
   display: inline-block;
@@ -178,4 +188,97 @@
   max-width: 50%;
 }
 
+#knowledgeHeader {
+  margin-top: -30%;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-bottom: 20%;
+  color: rgb(255, 5, 5);
+}
   
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+body {
+  background-color: #010;
+}
+
+.title {
+  font-family: "Cairo";
+  text-align: center;
+  color: #FFF;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  /* height: vh; */
+  letter-spacing: 1px;
+  /* line-height:2; */
+}
+
+h1 {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  
+  background-size: cover;
+  color: transparent;
+  background-clip: initial;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color : transparent;
+  text-transform: uppercase;
+  /* font-size: 400px; */
+
+  /* margin: 10px 0; */
+}
+/* styling my button */
+
+/* .white-mode {
+  text-decoration: none;
+  padding: 7px 10px;
+  background-color: rgb(34, 19, 17);
+  border-radius: 3px;
+  color: #FFF;
+  transition: .35s ease-in-out;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  font-family: "Montserrat";
+}
+
+.white-mode:hover {
+  background-color: #FFF;
+  color: #122;
+} */
+
+#knowledgeHeadline {
+  font-size: 300%;
+  /* margin-top: -10%; */
+  margin-left: -30%;
+  /* max-height: 70%; */
+
+}
+
+#blockchainTransformed {
+  /* margin-top: 30%; */
+  position: absolute;
+  background: transparent;
+  right: 0;
+  margin-top: -20%;
+}
+#defitransformed {
+  margin-top: 125%;
+  position: absolute;
+  background: transparent;
+  top: 0;
+  right: 0;
+  /* margin-top: -20%; */
+}
+
+#blockchainLink {
+  width: 100%;
+  background: transparent;
+  height: 80%;
+  margin-top: -12%;
+}
+
+.subsection {
+  color: red;
+}

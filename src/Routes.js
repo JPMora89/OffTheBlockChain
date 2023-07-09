@@ -73,8 +73,10 @@ import LoginForm from './userComponents/LoginForm';
 import SignupForm from './userComponents/SignupForm';
 import HomeAnon from "./HomeAnon";
 import CoinTable from "./coinComponents/coinTable";
+import KnowledgePage from "./knowledgeComponents/knowledgePage";
+import KnowledgeHardCode from "./knowledgeComponents/knowledgehardcoded";
 
-function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchlist, addToWatchlist, knowledgeTopics }) {
+function UserRoutes({ login, register, token, watchlist, userCoins, removeFromWatchlist, addToWatchlist, knowledgeTopics }) {
   return (
     <div>
       <Switch>
@@ -87,12 +89,20 @@ function UserRoutes({ login, register, token, watchlist, coins, removeFromWatchl
         <Route exact path="/coinDetail">
           {token ? <CoinDetail /> : <Redirect to="/login" />}
         </Route>
+        <Route
+        exact
+        path="/watchlist"
+        render={(props) => (
+          <WatchlistPage {...props} userCoins={userCoins} />
+        )}
+      />
         <Route exact path="/knowledge">
-          {token ? <KnowledgeContainer knowledgeTopics={knowledgeTopics} /> : <Redirect to="/login" />}
+          {token ? <KnowledgeHardCode/> : <Redirect to="/login" />}
         </Route>
         <Route exact path="/knowledge/:topicId">
-          {token ? <KnowledgeComponent /> : <Redirect to="/login" />}
+          {token ? <KnowledgePage knowledgeTopics={knowledgeTopics} /> : <Redirect to="/login" />}
         </Route>
+
         <Route exact path="/coins">
           {token ? <CoinTable /> : <Redirect to="/login" />}
         </Route>

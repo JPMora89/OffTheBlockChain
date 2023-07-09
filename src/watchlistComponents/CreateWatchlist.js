@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import OtbcApi from '../api';
 import WatchlistPage from './WatchlistPage';
+import "./watchlist.css"
 
 const CreateWatchlist = ({updateWatchlist}) => {
   const [watchlistName, setWatchlistName] = useState('');
@@ -26,8 +27,8 @@ const CreateWatchlist = ({updateWatchlist}) => {
   };
 
   return (
-    <div>
-      <h2>Create New Watchlist</h2>
+    <div className='createwatchlistcontainer'>
+      <h2 id='createwatchlistheader'>Create New Watchlist</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Watchlist Name:

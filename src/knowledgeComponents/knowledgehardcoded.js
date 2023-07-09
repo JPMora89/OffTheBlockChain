@@ -2,25 +2,34 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import KnowledgeComponent from "./KnowledgeComponent";
 import KnowledgeTopicList from "./KnowledgeTopics";
+import blockchain from "../assets/images/blockchain.jpg";
+import defi from "../assets/images/defi.webp";
+import dApps from "../assets/images/dApps.png";
+import blockchainTransformed from "../assets/images/blockchainTransformed.png";
+import defitransformed from "../assets/images/defitransformed.png";
+import blockchainLink from "../assets/images/blockchainLink.png";
 
-const KnowledgePage = ({ knowledgeTopics }) => {
-  const { topicId } = useParams();
-  //   const topic = knowledgeTopics.find((topic) => topic.id === parseInt(topicId));
-  const topic = knowledgeTopics.find(
-    (topic) => topic.topicId === parseInt(topicId)
-  ); // Update the comparison here
-  console.log("topicId:", topicId);
-  console.log("knowledgeTopics:", knowledgeTopics);
+const KnowledgeHardCode = ( ) => {
 
-  if (!topic) {
-    return <div>Topic not found</div>;
-  }
-
-  const { title, content } = topic;
 
   return (
+    
+
     <div id="knowledge-section">
-      <h1>Knowledge</h1>
+                {/* <img src={defitransformed} alt="defitransformed" id="defitransformed" /> */}
+
+       <div class="title">
+ <h1 id="knowledgeHeadline">What you need to know <br></br> about BlockChain <br></br> technology</h1>
+
+</div>
+        <img src={blockchainTransformed} alt="blockchainTransformed" id="blockchainTransformed" />
+
+
+         {/* <img src={blockchain} className="headerImage"></img> */}
+         
+      {/* <h1 id="knowledgeHeader">Knowledge</h1> */}
+   
+
       <div id="topic-1" class="knowledge-component">
         <h2>Introduction to Cryptocurrencies</h2>
         <div class="knowledge-content">
@@ -31,7 +40,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             beginner's guide, we'll explore the fundamental concepts of
             cryptocurrencies and shed light on their growing significance.
           </p>
-          <p>What is a Cryptocurrency?</p>
+          <p className="subsection">What is a Cryptocurrency?</p>
           <p>
             {" "}
             A cryptocurrency is a digital or virtual currency that uses
@@ -40,7 +49,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             currencies issued by governments, cryptocurrencies are based on
             decentralized technologies such as blockchain.
           </p>
-          <p>Key Characteristics of Cryptocurrencies:</p>
+          <p className="subsection">Key Characteristics of Cryptocurrencies:</p>
           <p>
             Decentralization: Cryptocurrencies operate on decentralized
             networks, eliminating the need for a central authority like a bank
@@ -67,7 +76,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             Limited Supply: Many cryptocurrencies have a finite supply, ensuring
             scarcity and potentially driving value over time.
           </p>
-          <p>How Cryptocurrencies Work:</p>
+          <p className="subsection">How Cryptocurrencies Work:</p>
           <p>
             {" "}
             At the core of most cryptocurrencies is blockchain technology. A
@@ -82,7 +91,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             network participants (nodes) through a process known as mining or
             staking, depending on the consensus mechanism.
           </p>
-          <p>Types of Cryptocurrencies:</p>
+          <p className="subsection">Types of Cryptocurrencies:</p>
           <p>
             {" "}
             Bitcoin, introduced in 2009, was the first and most well-known
@@ -91,7 +100,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             Ethereum, Ripple, Litecoin, and Bitcoin Cash. Each cryptocurrency
             has its unique features and use cases.
           </p>
-          <p>Use Cases of Cryptocurrencies:</p>
+          <p className="subsection">Use Cases of Cryptocurrencies:</p>
           <p>
             {" "}
             Cryptocurrencies offer a range of applications beyond being a
@@ -115,7 +124,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             transparent "chain" of blocks that contain records of transactions
             or information.
           </p>
-          <p> Key Concepts of Blockchain:</p>
+          <p className="subsection"> Key Concepts of Blockchain:</p>
           <p>
             Decentralization: Blockchain operates on a network of computers,
             known as nodes, where each node has a copy of the entire blockchain.
@@ -136,7 +145,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             trust. Additionally, blockchain's transparency allows anyone to view
             the entire transaction history.
           </p>
-          <p>Use Cases of Blockchain:</p>
+          <p className="subsection">Use Cases of Blockchain:</p>
           <p>
             Cryptocurrencies: Blockchain technology enables the secure transfer
             of digital currencies like Bitcoin and Ethereum, providing a
@@ -224,7 +233,7 @@ const KnowledgePage = ({ knowledgeTopics }) => {
         </div>
       </div>
       <div id="topic-6" class="knowledge-component">
-        <h2>How to Get Started Trading Crypto</h2>
+        <h2 className="subsection">How to Get Started Trading Crypto</h2>
         <div class="knowledge-content">
           <p>
             Trading cryptocurrencies can be an exciting and potentially
@@ -298,17 +307,26 @@ const KnowledgePage = ({ knowledgeTopics }) => {
             failures. Continuous learning and adaptation are vital in the
             dynamic cryptocurrency market.
           </p>
-          <p>
+          <p className="subsection">
             ______________Remember, trading crypto involves risks, and it's
             important to only invest what you can afford to lose. Consider
             consulting with a financial advisor before engaging in trading
             activities, especially if you're new to
             investing.________________________________
           </p>
+                          
+         
+
+  <img src={dApps} className="dapps"></img>
+</div>
         </div>
+ <div className="imageDiv">
+            <img src={defitransformed} alt="defitransformed" id="defitransformed" />
+                          <img src={blockchainLink} alt="blockchainLink" id="blockchainLink" />
       </div>
+
     </div>
   );
 };
 
-export default KnowledgePage;
+export default KnowledgeHardCode;

@@ -1,16 +1,18 @@
 
 
-import React from "react";
+import React, {useState} from "react";
 import KnowledgeComponent from "./KnowledgeComponent";
 import blockchain from "../assets/images/blockchain.jpg";
 import defi from "../assets/images/defi.webp";
-import dApps from "../assets/images/dApps.jpg";
+// import dApps from "../assets/images/dApps.jpg";
+import KnowledgeTopicList from "./KnowledgeTopics";
 
 import "./knowledgeStyling.css";
 
 
 
 const KnowledgeContainer = () => {
+  
   const knowledgeTopics = [
     {
       topicId: 1,
@@ -143,13 +145,16 @@ return (
         title={topic.title}
         content={topic.content}
         topicId={topic.topicId}
+        knowledgeTopics={knowledgeTopics}
         // className={`topic-${topic.id}`} 
       />
     ))}
   </div>
+  <KnowledgeTopicList knowledgeTopics={knowledgeTopics} />
+  
   <div className="imageDiv">
   <img src={defi} className="defi"></img>
-  <img src={dApps} className="dapps"></img>
+  {/* <img src={dApps} className="dapps"></img> */}
 </div>
   </>
 );

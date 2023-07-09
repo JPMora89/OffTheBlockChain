@@ -22,7 +22,7 @@ console.log(watchlist)
 const handleDeleteWatchlist = async () => {
   try {
     await OtbcApi.deleteWatchlist(watchlist.watchlist_id);
-    console.log(watchlist.watchlist_id)
+    // console.log(watchlist.watchlist_id)
     // Update the state or perform any necessary actions after successful deletion
   } catch (error) {
     console.error('Error deleting watchlist:', error);

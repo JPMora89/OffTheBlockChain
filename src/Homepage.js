@@ -14,7 +14,7 @@ function Homepage() {
   return (
     <div >
       <div className="container text-center jobly-welcome">
-        <CoinTable/>
+        <CoinTable />
 
         {currentUser ?
           (
@@ -30,6 +30,7 @@ function Homepage() {
                 to="/signup">Sign Up</Link> 
             </div>
           )}
+          
       </div>
     </div>
   )
