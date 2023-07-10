@@ -74,15 +74,17 @@
   }
   
 
-  #coinlockimage {
+  #cryptotransformed {
     border: solid black 2px;
     position: absolute;
     /* right: 0; */
-    max-width: 80%; /* Adjust as needed */
+    max-width: 500px; /* Adjust as needed */
     height: 50%; 
     /* margin-right: 40%; */
-    margin-left: -10%;
+    margin-left: -13%;
     margin-top: 25%;
+    /* width: 30%; */
+    
   }
   
   

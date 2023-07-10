@@ -15,6 +15,7 @@ import cryptocoins from "../assets/images/cryptocoins.png";
 import bitcoinethereum from "../assets/images/bitcoinethereum.jpg";
 import bitcoinonfire from "../assets/images/bitcoinonfire.jpg";
 import bitcointransformed from "../assets/images/bitcointransformed.png";
+import cryptocurrencytransformed from "../assets/images/cryptocurrencytransformed.png";
 import "./coinTable.css";
 
 const CoinTable = () => {
@@ -268,7 +269,7 @@ const CoinTable = () => {
             </table></div>
             
             <div className="image-right">
-    <img src={coinlock} alt="CoinLock" id="coinlockimage" />
+    <img src={cryptocurrencytransformed} alt="cryptotransformed" id="cryptotransformed" />
   </div>
             {/* <img
               src={bitcoinethereum}
