@@ -34,6 +34,7 @@ function App() {
 const login = async (loginFormData) => {
     try {
       const res = await OtbcApi.login(loginFormData);
+      console.log(res)
       setCurrentToken(res.token);
       console.log("login success")
     } catch (e) {
@@ -78,24 +79,7 @@ const login = async (loginFormData) => {
     return (<div>LOADING</div>);
   }
 
-  // const addToWatchlist = (coinId) => {
-  //   // Add the coinId to the watchlist state
-  //   console.log(coinId)
-  //   const updatedWatchlist = [...watchlist, coinId];
-  //   const res = OtbcApi.getCoins(coinId);
-  //   console.log(res)
-  //   if(res.has(res.coinId)){
-  //     return;
-  //   } else {
-  //   setWatchlist([...watchlist, coinId]);}
-  // };
 
-  // const removeFromWatchlist = (coinId) => {
-  //   // Remove the coinId from the watchlist state
-  //   const updatedWatchlist = watchlist.filter((id) => id !== coinId);
-  //   setWatchlist(updatedWatchlist);
-    
-  // };
   const fetchAllWatchlists = async () => {
     try {
       const watchlists = await OtbcApi.getAllWatchlists();
@@ -137,8 +121,12 @@ const login = async (loginFormData) => {
 
         </userContext.Provider>
       </BrowserRouter>
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} Off the Blockchain. All rights reserved. JPMORA.DEV</p>
+      </footer>
     </div>
     </UserCoinsProvider>
+    
   );
 }
 

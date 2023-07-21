@@ -45,7 +45,6 @@ const CoinTable = () => {
   const addCoinstoDB = async () => {
     try {
       const response = await OtbcApi.addAllCoinstoDB();
-      console.log(response);
     } catch (error) {
       console.error("Error adding coins to DB:", error);
     }
@@ -74,8 +73,10 @@ const CoinTable = () => {
   const allCoins = async () => {
     try {
       const response = await OtbcApi.getAllCoins();
+      console.log(response);
+      console.log(response[0].id);
+
       setIsLoading(false);
-      console.log("response: ", response);
       setUserCoins(response);
     } catch (error) {
       console.error("Error fetching coins:", error);
@@ -88,8 +89,7 @@ const CoinTable = () => {
 
   const addToWatchlist = async (coinId) => {
     if (selectedWatchlist) {
-      console.log(selectedWatchlist);
-      console.log("addToWatchlist called");
+
       try {
         await OtbcApi.addToWatchlist(coinId, selectedWatchlist);
         const updatedWatchlists = watchlists.map((watchlist) =>
@@ -111,13 +111,10 @@ const CoinTable = () => {
 
   const handleWatchlistChange = (event) => {
     const selectedName = event.target.value;
-    console.log(selectedName);
     const selectedWatchlist = watchlists.find(
       (watchlist) => watchlist.name === selectedName
     );
-    console.log(selectedWatchlist);
     const watchlistId = selectedWatchlist ? selectedWatchlist.watchlist_id : "";
-    console.log(watchlistId);
 
     setSelectedWatchlist(watchlistId);
   };
@@ -179,6 +176,11 @@ const CoinTable = () => {
           lcw-border-w="1"
         ></div>
       </span>
+      <p id="cointableintro">
+        Welcome to the Coin Table! Here, you can explore detailed information about various cryptocurrencies. 
+        Click on a coin's name to view its details and add it to your watchlist to stay updated on its performance. 
+        Enjoy your journey into the exciting world of cryptocurrencies!
+      </p>
 
       <h1 id="topCoinHeader">Top Coins</h1>
       {isLoading ? (
@@ -220,7 +222,7 @@ const CoinTable = () => {
               <tbody >
                 {userCoins.map((coin) => (
                   <tr key={coin.id}>
-                    <td>
+                    <td id="tableimage">
                       <img
                         src={coin.image}
                         alt={coin.name}
@@ -233,7 +235,7 @@ const CoinTable = () => {
                       onClick={() =>
                         setSelectedCoinName(coin.coin_id)
                       }
-                      className="coin-link" // Add a class name to the Link component
+                      className="coin-link"
                     >
                       {coin.name}
                     </Link>
@@ -278,7 +280,9 @@ const CoinTable = () => {
             /> */}
           </div>
           {selectedCoinName && (
-            <CoinDetail coinId={selectedCoinName.toLowerCase()} />
+            <CoinDetail coinId={selectedCoinName.toLowerCase()} 
+            watchlists={watchlists}
+            addToWatchlist={addToWatchlist} />
           )}
           {/* <CreateWatchlist
                 handleWatchlistChange={handleWatchlistChange}
@@ -321,7 +325,14 @@ const CoinTable = () => {
           <tbody>
             {trendingCoins.map((coin, index) => (
               <tr key={coin.item.id}>
-                <img src={coin.item.thumb} alt={coin.item.name} />
+                {/* <img src={coin.item.thumb} alt={coin.item.name} /> */}
+                <td id="trendingtableimage">
+          <img
+            src={coin.item.thumb}
+            alt={coin.item.name}
+            style={{ width: "30px", height: "30px" }}
+          />
+        </td>
 
                 <td id="topcointablehead">{index + 1}</td>
                 <td>

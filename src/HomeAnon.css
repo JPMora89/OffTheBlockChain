@@ -1,0 +1,69 @@
+
+#HomepageAnonButtons {
+    background-image: url(https://img.freepik.com/free-photo/cryptocurrency-coding-digital-black-background-open-source-blockchain-concept_53876-124641.jpg?w=1060&t=st=1689786139~exp=1689786739~hmac=ddb06b094c55306d8a7dac9727bd9facd8c99c732db6d7e289d921d5750db23a);
+    height: 600px;
+    align-items: center;
+    vertical-align: center;
+    justify-content: center;
+    text-align: center;
+
+
+
+
+}
+
+#homeanonfooter {
+    max-height: 50px;
+}
+
+#homeanonparagraph {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    max-width: 700px;
+    margin-left: 30%;
+    /* margin-top: 5%; */
+    border: red solid 2px;
+    vertical-align: middle;
+    
+}
+#homeanonparagraphheader {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+    vertical-align: middle;
+
+    
+}
+
+#loginbutton {
+    /* margin-left: 45%; */
+    margin-right: 8%;
+    background-color: black;
+    border: red solid 2px;
+    margin-top: 5%;
+    margin-left: 10%;
+
+}
+
+#loginbutton:hover {
+    background-color: red;
+    border: black solid 2px;
+    color: black;
+}
+
+#signupbutton {
+    margin-right: 10%;
+    background-color: black;
+    border: red solid 2px;
+    margin-top: 5%;
+
+}
+
+#signupbutton:hover {
+    background-color: red;
+    border: black solid 2px;
+    color: black;
+}

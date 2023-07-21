@@ -4,7 +4,6 @@ import React, {useState} from "react";
 import KnowledgeComponent from "./KnowledgeComponent";
 import blockchain from "../assets/images/blockchain.jpg";
 import defi from "../assets/images/defi.webp";
-// import dApps from "../assets/images/dApps.jpg";
 import KnowledgeTopicList from "./KnowledgeTopics";
 
 import "./knowledgeStyling.css";

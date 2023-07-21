@@ -1,18 +1,37 @@
 .table-container {
     display: flex;
-    align-items: flex-start; /* Adjust alignment as needed */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
     
   }
+
+  
   .image-left {
-    margin-right: 20px; /* Adjust as needed */
+    /* margin-right: 20px;  */
+    order: 1;
   }
   
-  .image-right {
-    margin-left: 20px; /* Adjust as needed */
-  }
+/* .image-right {
+  margin-left: 20px;
+  order: 2;
+} */
   
+#cointableintro {
+  color: red;
+  text-align: center;
+  margin-top: 3%;
+  font-size: 20px;
+  max-width: 70%;
+  margin-left: 15%;
+}
+
+
   .table-wrapper {
     flex: 1;
+    align-content: center;
+    align-items: center;
   }
 
   #topCoins {
@@ -29,37 +48,46 @@
     display: flex;
     max-width: 1000px;
     justify-content: center;
-    margin-left: 15%;
+    margin-left: 20%;
     margin-top: 20px;
+    align-self: center;
   }
   
   .livecoinwatch-widget-1 {
     flex: 1;
+    align-items: center;
+    justify-content: center;
   }
   
   #topCoinTable {
     font: bold 18px 'Bebas Neue', sans-serif;
-    /* margin-left: 16%; */
     margin-top: 14%; 
     border: 2px solid rgb(80, 12, 12);
     border-collapse: collapse; 
     padding: 7%;
-    width: 70%;
-    /* margin-left: -30%; */
+    width: 100%;
     justify-content: center;
     align-items: center;
-    margin-left: 15%;
+    /* margin-left: 10%; */
+    text-align: center;
+
     }
   
   #topCoinTable th,
   #topCoinTable td {
-    border: 1px solid rgb(179, 69, 69); /* Add this line to set border style */
-    padding: 8px; /* Add this line to add padding inside cells */
+    border: 1px solid rgb(179, 69, 69); 
+    padding: 8px; 
+    justify-content: center;
+    align-items: center;
   }
 
   #topCoinHeader{
     font-size: 100px;
-    margin-top: 10%;
+    text-align: center; 
+    margin: 0; 
+    margin-top: 50px;
+
+
   }  
   .coin-link {
     display: inline-block; 
@@ -77,43 +105,38 @@
   #cryptotransformed {
     border: solid black 2px;
     position: absolute;
-    /* right: 0; */
-    max-width: 500px; /* Adjust as needed */
-    height: 50%; 
-    /* margin-right: 40%; */
-    margin-left: -13%;
-    margin-top: 25%;
-    /* width: 30%; */
+    max-width: 35%;
+    height: 35%; 
+    /* margin-left: -20%; */
+    margin-top: 75%;
+    margin-left: 27%;
+    top: 0;
+    right: 0;
+    margin-right: -3%;
     
   }
   
   
-  /* #coinTableContainer {
-    display: flex;
-  } */
-  
-  /* #coinTableContainer > div {
-    flex: 1;
-    margin-left: 20px;
-    margin-right: 20px;
-  } */
-  
+
   #cryptocoins {
     position: absolute;
    max-width: 100%;
-   /* margin-left: -50%; */
-   margin-left: -15%;
-    margin-top: -10%;
+   margin-left: -7%;
+    /* margin-top: -10%; */
+    top: 0;
+    margin-top: 35%;
+    left: 0;
    
   }
 
   #watchlistSelect {
     border-radius: 10px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: -10%;
+    justify-self: center;
+    margin-left: 45%;
   }
 
-  /* BUTTON ANIMATIONS */
 
   .btn-2,
 .btn-2 *,
@@ -152,7 +175,6 @@
 }
 .btn-2 svg {
   display: block;
-  /* vertical-align: middle; */
 }
 .btn-2 [hidden] {
   display: none;
@@ -187,22 +209,25 @@
     
   }
 
-/* #trending-container .trendingcointable {
-    border: 2px solid red;
-    
-  } */
-  
-  /* #trending-container > table.trendingcointable {
-    border: 2px solid red;
-  } */
 
   #trendingcointable {
     border: 2px solid rgb(80, 12, 12);
-    margin-right: 10%;
+    margin-right: 15%;
+    max-width: 100%;
+    text-align: center;
   }
   #trendingcointable tr,
 #trendingcointable td {
   border: 1px solid rgb(80, 12, 12);
+}
+/* #trendingcointable img {
+  border: 1px solid rgb(80, 12, 12);
+  max-width: 100%;
+} */
+
+#trendingcointable img {
+  max-width: 30px;
+  max-height: 30px;
 }
 
   
@@ -210,22 +235,14 @@
      margin-right: 20%; 
      margin-left: 15%;
     text-align: center;
-    /* background-image: url(https://media1.giphy.com/media/bsRSKZhTXgDXa/giphy.gif?cid=ecf05e47s92mg15pwniszqh7h5mvd94r8nudxq6nrln2zhrg&ep=v1_gifs_related&rid=giphy.gif&ct=g);
-    font-size: 50px;
-    background-size: cover;
-    color: transparent;
-    background-clip: initial;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color : transparent;
-    text-transform: uppercase; */
+
     color: red;
   }
   
-  #bitcoinonfire {
+  /* #bitcoinonfire {
     display: block;
     margin-left: -30%;
-  }
+  } */
 
   #topcointablehead {
     color: red;
@@ -234,4 +251,17 @@
   #coinmarquee {
     font-size: 30px;
 
+  }
+
+  #bitcointransformed {
+    margin-right: -5%;
+    margin-left: 5%;
+  }
+
+  /* #tableimage {
+    width: 30px;
+  }  */
+
+  #trendingtableimage {
+    width: 30px;
   }

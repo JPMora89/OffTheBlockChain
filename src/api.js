@@ -70,7 +70,7 @@ static async addAllCoinstoDB(){
  
   /** Get details on a coin by name. */
 
-
+// Get coin by ID
   static async getCoin(id) {
     let res = await this.request(`coins/${id}`);
         console.log(res.coin)
@@ -78,10 +78,43 @@ static async addAllCoinstoDB(){
     return res.coin;
 
   }
+
+// Get coin by name or symbol
+static async getCoinByNameOrSymbol(coinNameOrSymbol) {
+  console.log("This function has been called: getCoinByNameOrSymbol")
+  let res = await this.request(`coins/name-or-symbol/${coinNameOrSymbol}`);
+  console.log(res.coin)
+
+  return res.coin;
+}
+
+// Get coin by name
+static async getCoinByName(coinName) {
+  let res = await this.request(`coins/name/${coinName}`);
+  return res.coin;
+}
+// static async getCoinByName(coinName) {
+//   try {
+//     let res = await this.request(`coins/name/${coinName}`);
+//     console.log(res); // Log the entire response to check its format
+//     console.log("This function has been called: getCoinByName");
+//     return res; // Return the entire response
+//   } catch (error) {
+//     console.error('Error fetching coin by name:', error);
+//     return null;
+//   }
+// }
+
+
+
+
+  // Get top 25 coins
   static async getAllCoins() {
     let res = await this.request('coins/all');
     return res.coins;
   }
+ 
+  
 
   static async getSearchedCoins(coin_name) {
     let res = await this.request(`coins/${coin_name}`, {name: coin_name});
@@ -123,11 +156,7 @@ static async addCoin(coin, watchlistId) {
     return res.user;
   }
 
-    // static async addToWatchlist(coin_name) {
-    //     let res = await this.request(`watchlist/${coin_name}`, {}, 'post');
-    //     return res;
-    // }
-  // Add coin to watchlist
+
 
   static async addToWatchlist(coinId, watchlistId) {
     let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'post');

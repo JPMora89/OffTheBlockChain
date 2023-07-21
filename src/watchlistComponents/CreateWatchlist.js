@@ -14,7 +14,6 @@ const CreateWatchlist = ({updateWatchlist}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Call the API function to create a new watchlist
       await OtbcApi.createWatchlist(watchlistName);
       console.log(`Watchlist "${watchlistName}" created`);
       const updatedWatchlists = await OtbcApi.getAllWatchlists();

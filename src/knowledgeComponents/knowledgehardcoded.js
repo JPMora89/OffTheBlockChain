@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import {Link} from 'react-router-dom';
+
 import KnowledgeComponent from "./KnowledgeComponent";
 import KnowledgeTopicList from "./KnowledgeTopics";
 import blockchain from "../assets/images/blockchain.jpg";
@@ -8,6 +10,7 @@ import dApps from "../assets/images/dApps.png";
 import blockchainTransformed from "../assets/images/blockchainTransformed.png";
 import defitransformed from "../assets/images/defitransformed.png";
 import blockchainLink from "../assets/images/blockchainLink.png";
+import "./knowledgeStyling.css";
 
 const KnowledgeHardCode = ( ) => {
 
@@ -24,7 +27,9 @@ const KnowledgeHardCode = ( ) => {
 </div>
         <img src={blockchainTransformed} alt="blockchainTransformed" id="blockchainTransformed" />
 
-
+        <Link id='glossaryButton' 
+                to="/glossary">Glossary
+              </Link>
          {/* <img src={blockchain} className="headerImage"></img> */}
          
       {/* <h1 id="knowledgeHeader">Knowledge</h1> */}
@@ -322,7 +327,7 @@ const KnowledgeHardCode = ( ) => {
         </div>
  <div className="imageDiv">
             <img src={defitransformed} alt="defitransformed" id="defitransformed" />
-                          <img src={blockchainLink} alt="blockchainLink" id="blockchainLink" />
+                          {/* <img src={blockchainLink} alt="blockchainLink" id="blockchainLink" /> */}
       </div>
 
     </div>

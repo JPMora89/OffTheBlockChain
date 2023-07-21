@@ -1,0 +1,54 @@
+/* glossary.css */
+
+.glossary {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glossary h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .glossary ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .glossary li {
+    margin-bottom: 10px;
+  }
+  
+  .glossary li strong {
+    color: red;
+  }
+  
+  /* Add a separator between terms and definitions */
+  .glossary li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  /* Add some space between terms and definitions */
+  .glossary li {
+    padding-top: 10px;
+  }
+  
+  /* Style the definitions */
+  .glossary li::before {
+    content: "– ";
+    color: red;
+  }
+  
+  /* Hover effect */
+  .glossary li:hover {
+    background-color: #862121;
+    transition: background-color 0.2s ease;
+  }
+  

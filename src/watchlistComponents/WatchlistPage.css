@@ -1,0 +1,16 @@
+#blockchainLink {
+    max-width: 1400px;
+    max-height: 800px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 5%;
+}
+
+#watchlistpageheader {
+    text-align: center;
+}
+
+#watchlistcontainer {
+    margin-bottom: 20%;
+}
