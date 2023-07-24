@@ -5,12 +5,13 @@ import Watchlist from './watchlist';
 import { Route, Switch, Link } from "react-router-dom";
 import OtbcApi from '../api';
 import "./watchlist.css" 
+import CoinDetailsPage from '../coinComponents/CoinDetailsPage';
 
 
 
 
 
-const WatchlistContainer = ({ watchlists, userCoins, removeFromWatchlist, handleDeleteWatchlist }) => {
+const WatchlistContainer = ({ watchlists, userCoins, removeFromWatchlist, handleDeleteWatchlist}) => {
   const [watchlistItems, setWatchlistItems] = useState([]);
   console.log('Watchlists received:', watchlists);
   
@@ -27,8 +28,10 @@ useEffect(() => {
       for (const watchlistId of watchlistids) {
         const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
         items.push(...watchlistItems);
+        console.log('Watchlist items:', watchlistItems);
       }
       setWatchlistItems(items);
+      console.log('Watchlist items:', items);
     } catch (error) {
       console.error('Error fetching watchlist items:', error);
     }
@@ -36,12 +39,13 @@ useEffect(() => {
 
   fetchWatchlistItems();
 }, []);
+console.log('Watchlist items:', watchlistItems);
+console.log('Watchlists:', watchlists);
 
 const handleDeleteWatchlistAndUpdate = async (watchlistId) => {
   try {
     await OtbcApi.deleteWatchlist(watchlistId);
     console.log('Watchlist deleted:', watchlistId);
-    // Remove the deleted watchlist from the state
     const updatedWatchlists = watchlists.filter((watchlist) => watchlist.watchlist_id !== watchlistId);
     handleDeleteWatchlist(updatedWatchlists);
   } catch (error) {

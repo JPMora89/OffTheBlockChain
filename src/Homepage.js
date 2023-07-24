@@ -1,14 +1,18 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef, useEffect} from 'react';
 import './Homepage.css';
 import userContext from './userComponents/userContext';
 import {Link} from 'react-router-dom';
 import CoinTable from './coinComponents/coinTable';
 import blockchainLink from "./assets/images/blockchainLink.png";
-import BackgroundVideo from './assets/images/backgroundvideo.mp4';
+import BackgroundVideo from './assets/images/backgroundvideo3.mp4';
+import { Helmet } from 'react-helmet';
+// import { element } from 'prop-types';
+// import 'vanta/dist/vanta.globe.min.js';
 
 
 
-
+// Disable ESLint for the following lines that use VANTA
+/* eslint-disable */
 
 // function Homepage() {
 //   const { currentUser } = useContext(userContext);
@@ -93,15 +97,49 @@ import BackgroundVideo from './assets/images/backgroundvideo.mp4';
 // };
 
 const Homepage = () => {
+  // const vantaRef = useRef(null);
+
+  // useEffect(() => {
+  //   // Initialize Vanta.js background effect when the component mounts
+  //   VANTA.GLOBE({
+  //     el: vantaRef.current,
+  //     mouseControls: true,
+  //     touchControls: true,
+  //     gyroControls: false,
+  //     minHeight: 200.00,
+  //     minWidth: 200.00,
+  //     scale: 1.00,
+  //     scaleMobile: 1.00,
+  //     color: 0xff5f1f,
+  //     backgroundColor: 0x070c32
+  //   });
+
+  //   // Clean up Vanta.js when the component unmounts
+  //   return () => {
+  //     if (vantaRef.current) {
+  //       VANTA.destroy();
+  //     }
+  //   };
+  // }, []);
+
+
+
   return (
     <div className="container">
       <header className="header">
         <h2 id="homepageheader">Welcome to Off the Blockchain</h2>
-        <p>Explore the world of cryptocurrencies and blockchain technology</p>
+        <p id='homepageheadersentence'>Explore the world of cryptocurrencies and blockchain technology</p>
       </header>
       <section className="section">
+        {/* <Helmet>
+        <script src="three.r134.min.js"></script>
+
+<script src="vanta.globe.min.js">
+</script>
+        </Helmet> */}
         {/* <img src={blockchainLink} alt="blockchainLink" id="blockchainLink" /> */}
         <div className="video-container">
+
           <video id="background-video" loop autoPlay muted>
             <source src={BackgroundVideo} type="video/mp4" />
             Your browser does not support the video tag.

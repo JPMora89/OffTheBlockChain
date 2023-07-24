@@ -14,6 +14,9 @@ import CreateWatchlist from './watchlistComponents/CreateWatchlist';
 import WatchlistContainer from './watchlistComponents/WatchlistContainer';
 import { UserCoinsProvider } from './userCoinContext';
 import KnowledgeContainer from './knowledgeComponents/KnowledgeContainer';
+// import { SwapWidget } from '@uniswap/widgets'
+// import '@uniswap/widgets/fonts.css'
+
 
 
 
@@ -102,6 +105,8 @@ const login = async (loginFormData) => {
             currentUser={currentUser} 
             logout={logout}
           />
+
+
           
           {/* <Route exact path="/" component={Homepage} /> 
             <Route exact path="/watchlist" component={WatchlistContainer} /> 

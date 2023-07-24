@@ -98,7 +98,7 @@
 #topic-1 {
   display: inline-block;
   /* vertical-align: top; */
-    color: rgb(255, 5, 5);
+    color: white;
     margin-top: 16%;
     margin-left: 10%;
     margin-right: 5%;
@@ -116,7 +116,7 @@
 #topic-2 {
   display: inline-block;
   vertical-align: top;
-    color: rgb(255, 5, 5);
+    color: white;
     margin-top: 16%;
     margin-right: 5%;
     /* margin-left: -10%; */
@@ -137,7 +137,7 @@
 #topic-3,
 #topic-4,
 #topic-5 {
-  color: rgb(255, 5, 5);
+  color: white;
   display: inline-block;
   vertical-align: top;
   width: 30%; 
@@ -169,7 +169,7 @@
   margin-left: 10%;
   margin-right: 5%;
   margin-bottom: 20%;
-  color: rgb(255, 5, 5);
+  color: white;
 }
   
 @import url('https://fonts.googleapis.com/css?family=Cairo');
@@ -242,12 +242,12 @@ h1 {
 }
 
 .subsection {
-  color: red;
+  color: white;
 }
 
 #glossaryButton {
-  border: 2px solid red;
-  color: red;
+  border: 2px solid goldenrod;
+  color: goldenrod;
   background: transparent;
   max-width: 5%;
   align-items: center;
@@ -262,6 +262,6 @@ h1 {
 }
 
 #glossaryButton:hover {
-  background: red;
+  background: goldenrod;
   color: white;
 }

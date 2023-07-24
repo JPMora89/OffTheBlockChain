@@ -122,6 +122,8 @@ const WatchlistPage = (items) => {
     setWatchlists(updatedWatchlists);
   };
 
+  console.log('Items prop:', items); // Add this line to check the items prop
+
   return (
     <div>
       <Helmet>

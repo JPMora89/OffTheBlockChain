@@ -164,10 +164,78 @@ static async addCoin(coin, watchlistId) {
     return res;
   }
   
-    static async removeFromWatchlist(coinId, watchlistId) {
-        let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'delete');
+    // static async removeFromWatchlist(coinId, watchlistId) {
+    //     let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'delete');
+    //     return res;
+    // }
+    // static async removeFromWatchlist(coinName, watchlistId) {
+    //   try {
+    //     // Fetch the coin's ID based on its name from the backend API
+    //     const coin = await this.getCoinByName(coinName);
+    
+    //     if (!coin) {
+    //       throw new Error(`Coin not found: ${coinName}`);
+    //     }
+    
+    //     const { id: coinId } = coin;
+    
+    //     // Remove the coin from the watchlist
+    //     const res = await this.request(
+    //       `watchlist/${watchlistId}/${coinId}`,
+    //       {},
+    //       'delete'
+    //     );
+    
+    //     return res;
+    //   } catch (error) {
+    //     console.error('Error removing coin from watchlist:', error);
+    //     throw error;
+    //   }
+    // }
+    static async removeFromWatchlist(coinName, watchlistId) {
+      try {
+        // Fetch the coin's ID based on its name from the backend API
+        const coin = await this.getCoinByName(coinName);
+    
+        if (!coin) {
+          throw new Error(`Coin not found: ${coinName}`);
+        }
+    
+        const { id: coinId } = coin;
+    
+        // Remove the coin from the watchlist
+        const res = await this.request(
+          `watchlist/${watchlistId}/${coinId}`,
+          {},
+          'delete'
+        );
+    
+        // Check if the response contains the 'message' property
+        if (!res || !res.message) {
+          throw new Error(
+            `Unexpected response from the backend API: ${JSON.stringify(res)}`
+          );
+        }
+    
         return res;
+      } catch (error) {
+        console.error('Error removing coin from watchlist:', error);
+        throw error;
+      }
     }
+    // static async removeFromWatchlist(coinId, watchlistId) {
+    //   try {
+    //     const res = await this.request(
+    //       `watchlist/${watchlistId}/${coinId}`,
+    //       {},
+    //       'delete'
+    //     );
+    //     return res;
+    //   } catch (error) {
+    //     console.error("Error removing coin from watchlist:", error);
+    //     throw error;
+    //   }
+    // }
 
     static async getWatchlist() {
         let res = await this.request(`watchlist/`);

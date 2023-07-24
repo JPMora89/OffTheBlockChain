@@ -1,13 +1,15 @@
 
 
 * {
-  background-color: #020202;
-  color: white;
+  background-color: #070c32;
+  color: #FF5F1F;
 }
 
  .navbar {
-  background-color: #020202;
+  background-color: #070c32;
   width: 100%;
+  color: goldenrod;
+  background: transparent;
 }
 /* 
 #navbarLogo {
@@ -44,24 +46,26 @@
   left: 0;
   top: 0;
   margin-left: -8%;
+  margin-top: -8%;
 }
 
 /* Update the styles for the navbar links */
 #responsive-navbar-nav {
   justify-content: flex-end; /* Align links to the right */
+  color: goldenrod;
 }
 
 .nav-link {
   font-size: 15px;
-  color: red;
+  color: goldenrod;
   text-transform: uppercase;
-  margin-right: 5px; /* Add some space between the links */
+  margin-right: 5px; 
 }
 #navbarLinks {
   font-size: 20px;
   z-index: 999;
   background-size: cover;
-  color: white;
+  color: goldenrod;
   background-clip: initial;
   -moz-background-clip: text;
   -webkit-background-clip: text;
@@ -73,24 +77,24 @@
 
 #navbarLinksWatchlist {
   margin-right: -10%;
-  color: red;
+  color: goldenrod;
   margin-left: 20%;
   font-size: 15px;
 }
 #navbarLinksKnowledge {
-  color: red;
+  color: goldenrod;
   margin-left: 10%;
   font-size: 15px;
 
 }
 #navbarLinksLatestNews {
-  color: red;
+  color: goldenrod;
   /* margin-left: 10%; */
   font-size: 15px;
 
 }
 #navbarLinksLogout {
-  color: red;
+  color: goldenrod;
   font-size: 15px;
 
 
@@ -100,9 +104,9 @@
 }
 
 #search-bar {
-  color: red;
+  color: goldenrod;
   z-index: 999;
-  margin-top: 5%;
+  margin-top: 50%;
 } 
  
 #marketnavbar {
@@ -119,4 +123,17 @@
   color: red;
   font-size: 15px;
   margin-right: 5px;
+}
+
+.ml-auto {
+  color: goldenrod;
+}
+
+#responsive-navbar-nav {
+  /* justify-content: flex-end; */
+  color: goldenrod;
+}
+
+.container {
+  background-color: #070c32;
 }

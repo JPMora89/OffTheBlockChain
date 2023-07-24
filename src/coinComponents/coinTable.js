@@ -42,17 +42,19 @@ const CoinTable = () => {
     fetchAllWatchlists();
   }, []);
 
-  const addCoinstoDB = async () => {
-    try {
-      const response = await OtbcApi.addAllCoinstoDB();
-    } catch (error) {
-      console.error("Error adding coins to DB:", error);
-    }
-  };
+  // const addCoinstoDB = async () => {
+  //   try {
+  //     const response = await OtbcApi.addAllCoinstoDB();
+  //   } catch (error) {
+  //     console.error("Error adding coins to DB:", error);
+  //   }
+  // };
   
-  useEffect(() => {
-    addCoinstoDB();
-  }, []);
+
+  // useEffect(() => {
+  //   addCoinstoDB();
+  // }, []);
+ 
   
 
   useEffect(() => {
@@ -73,8 +75,8 @@ const CoinTable = () => {
   const allCoins = async () => {
     try {
       const response = await OtbcApi.getAllCoins();
-      console.log(response);
-      console.log(response[0].id);
+      
+
 
       setIsLoading(false);
       setUserCoins(response);
@@ -98,12 +100,51 @@ const CoinTable = () => {
             : watchlist
         );
         alert("Coin added to watchlist");
+        console.log(watchlists + "watchlists")
         setWatchlists(updatedWatchlists);
+        console.log(updatedWatchlists + "updated watchlists")
+        console.log(watchlists.map(watchlist => watchlist.name));
+        console.log(updatedWatchlists.map(watchlist => watchlist.name));
+        console.log(watchlists.map(watchlist => watchlist.coins));
+        console.log(watchlists[0].coins);
+        console.log(updatedWatchlists[0].coins);
+        console.log(watchlists[1].coins);
+
       } catch (error) {
         console.error("Error adding coin to watchlist:", error);
       }
     }
   };
+
+  const [watchlistItems, setWatchlistItems] = useState([]);
+  console.log('Watchlists received:', watchlists);
+  
+
+let watchlistids = watchlists.map((watchlist) => {
+  
+  return watchlist.watchlist_id
+})
+
+useEffect(() => {
+  const fetchWatchlistItems = async () => {
+    try {
+      const items = [];
+      for (const watchlistId of watchlistids) {
+        const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
+        items.push(...watchlistItems);
+        console.log('Watchlist items:', watchlistItems);
+        console.log(watchlistId)
+
+      }
+      setWatchlistItems(items);
+    } catch (error) {
+      console.error('Error fetching watchlist items:', error);
+    }
+  };
+
+  fetchWatchlistItems();
+}, []);
+
 
   useEffect(() => {
     console.log(selectedCoinId);
@@ -147,7 +188,7 @@ const CoinTable = () => {
         id="coinmarquee"
           coin-ids="bitcoin,ethereum,ripple,matic-network,solana,dogecoin,tether,usd-coin,cosmos"
           currency="usd"
-          background-color="#000000"
+          background-color="#070c32"
           locale="en"
           font-color="#ffffff"
         ></coingecko-coin-price-marquee-widget>

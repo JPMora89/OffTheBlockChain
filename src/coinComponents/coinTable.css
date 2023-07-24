@@ -19,7 +19,7 @@
 } */
   
 #cointableintro {
-  color: red;
+  color: #FF5F1F;
   text-align: center;
   margin-top: 3%;
   font-size: 20px;
@@ -62,7 +62,7 @@
   #topCoinTable {
     font: bold 18px 'Bebas Neue', sans-serif;
     margin-top: 14%; 
-    border: 2px solid rgb(80, 12, 12);
+    border: 2px solid #FF5F1F;
     border-collapse: collapse; 
     padding: 7%;
     width: 100%;
@@ -75,7 +75,7 @@
   
   #topCoinTable th,
   #topCoinTable td {
-    border: 1px solid rgb(179, 69, 69); 
+    border: 1px solid rgb(152, 123, 172); 
     padding: 8px; 
     justify-content: center;
     align-items: center;
@@ -91,19 +91,24 @@
   }  
   .coin-link {
     display: inline-block; 
-    border: 1px solid rgb(150, 68, 68);
+    border: 1px solid rgb(152, 123, 172);
+    border-radius: 5px;
     padding: 4px 8px;
     justify-content: center;
     align-items: center;
     align-content: center;
     justify-items: center;
     margin-top: 5%;
+    color: rgb(101, 57, 131);
     
   }
-  
+  .coin-link:hover {
+    background-color: goldenrod;
+    color: black;
+  }
 
   #cryptotransformed {
-    border: solid black 2px;
+    /* border: solid black 2px; */
     position: absolute;
     max-width: 35%;
     height: 35%; 
@@ -153,7 +158,7 @@
   -webkit-appearance: button;
   background-color: #000;
   background-image: none;
-  color: #9c2222;
+  color: goldenrod;
   cursor: pointer;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
@@ -211,14 +216,14 @@
 
 
   #trendingcointable {
-    border: 2px solid rgb(80, 12, 12);
+    border: 2px solid goldenrod;
     margin-right: 15%;
     max-width: 100%;
     text-align: center;
   }
   #trendingcointable tr,
 #trendingcointable td {
-  border: 1px solid rgb(80, 12, 12);
+  border: 1px solid goldenrod;
 }
 /* #trendingcointable img {
   border: 1px solid rgb(80, 12, 12);
@@ -245,7 +250,7 @@
   } */
 
   #topcointablehead {
-    color: red;
+    color: rgb(152, 123, 172);
   }
 
   #coinmarquee {
