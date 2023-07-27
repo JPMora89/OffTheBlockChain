@@ -75,7 +75,7 @@
   
   #topCoinTable th,
   #topCoinTable td {
-    border: 1px solid rgb(152, 123, 172); 
+    border: 1px solid #FF5F1F; 
     padding: 8px; 
     justify-content: center;
     align-items: center;
@@ -91,7 +91,7 @@
   }  
   .coin-link {
     display: inline-block; 
-    border: 1px solid rgb(152, 123, 172);
+    border: 1px solid #FF5F1F;
     border-radius: 5px;
     padding: 4px 8px;
     justify-content: center;
@@ -99,11 +99,11 @@
     align-content: center;
     justify-items: center;
     margin-top: 5%;
-    color: rgb(101, 57, 131);
+    color: white;
     
   }
   .coin-link:hover {
-    background-color: goldenrod;
+    background-color: #FF5F1F;
     color: black;
   }
 
@@ -113,9 +113,9 @@
     max-width: 35%;
     height: 35%; 
     /* margin-left: -20%; */
-    margin-top: 75%;
+    margin-top: -50%;
     margin-left: 27%;
-    top: 0;
+    /* top: 0; */
     right: 0;
     margin-right: -3%;
     
@@ -129,7 +129,7 @@
    margin-left: -7%;
     /* margin-top: -10%; */
     top: 0;
-    margin-top: 35%;
+    margin-top: 40%;
     left: 0;
    
   }
@@ -195,7 +195,7 @@
   mix-blend-mode: difference;
 }
 .btn-2:before {
-  background: #fff;
+  background: #FF5F1F;
   content: "";
   inset: 0;
   position: absolute;
@@ -216,14 +216,17 @@
 
 
   #trendingcointable {
-    border: 2px solid goldenrod;
+    border: 2px solid #FF5F1F;
     margin-right: 15%;
     max-width: 100%;
     text-align: center;
+    padding: 10px;
+    margin-bottom: 10%;
   }
   #trendingcointable tr,
 #trendingcointable td {
-  border: 1px solid goldenrod;
+  border: 1px solid #FF5F1F;
+  padding: 8px;
 }
 /* #trendingcointable img {
   border: 1px solid rgb(80, 12, 12);
@@ -237,8 +240,8 @@
 
   
   .trending-container h2 {
-     margin-right: 20%; 
-     margin-left: 15%;
+     margin-right: 10%; 
+     margin-left: 10%;
     text-align: center;
 
     color: red;
@@ -250,7 +253,7 @@
   } */
 
   #topcointablehead {
-    color: rgb(152, 123, 172);
+    color: white;
   }
 
   #coinmarquee {
@@ -269,4 +272,11 @@
 
   #trendingtableimage {
     width: 30px;
+  }
+
+  #trendingcoinname {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+
   }

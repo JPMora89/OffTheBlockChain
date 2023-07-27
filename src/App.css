@@ -1,57 +1,41 @@
-
-
 * {
   background-color: #070c32;
-  color: #FF5F1F;
+  color: #ff5f1f;
 }
 
- .navbar {
+.navbar {
   background-color: #070c32;
   width: 100%;
   color: goldenrod;
   background: transparent;
 }
-/* 
-#navbarLogo {
-
-  
-
-  
-  font-size: 50px;
-  margin-right: 10%;
-  z-index: 999;
-  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
-  background-size: cover;
-  color: transparent;
-  background-clip: initial;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color : transparent;
-  text-transform: uppercase; 
- 
-} */
 
 #navbarLogo {
   font-size: 50px;
   margin-right: 10%;
   z-index: 999;
-  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
-  background-size: cover;
-  color: transparent;
-  background-clip: initial;
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+  color: #ff5f1f;
+
   text-transform: uppercase;
   left: 0;
   top: 0;
   margin-left: -8%;
   margin-top: -8%;
+  animation: glow 0.8s ease-in-out infinite alternate;
 }
 
-/* Update the styles for the navbar links */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #ffffff;
+  }
+  to {
+    text-shadow: 0 0 30px #34b3c1, 0 0 10px #a3246a;
+  }
+}
+
 #responsive-navbar-nav {
-  justify-content: flex-end; /* Align links to the right */
+  justify-content: flex-end;
   color: goldenrod;
 }
 
@@ -59,7 +43,7 @@
   font-size: 15px;
   color: goldenrod;
   text-transform: uppercase;
-  margin-right: 5px; 
+  margin-right: 5px;
 }
 #navbarLinks {
   font-size: 20px;
@@ -71,8 +55,6 @@
   -webkit-background-clip: text;
   text-transform: uppercase;
   margin-left: 5%;
-  
-  
 }
 
 #navbarLinksWatchlist {
@@ -85,19 +67,14 @@
   color: goldenrod;
   margin-left: 10%;
   font-size: 15px;
-
 }
 #navbarLinksLatestNews {
   color: goldenrod;
-  /* margin-left: 10%; */
   font-size: 15px;
-
 }
 #navbarLinksLogout {
   color: goldenrod;
   font-size: 15px;
-
-
 }
 #searchbar {
   margin-right: 5%;
@@ -107,17 +84,11 @@
   color: goldenrod;
   z-index: 999;
   margin-top: 50%;
-} 
- 
-#marketnavbar {
-  margin-left: 15%;
-  /* color: red; */
 }
 
-/* #watchlistnavbar {
+#marketnavbar {
   margin-left: 15%;
-  color: red;
-}  */
+}
 
 .nav-link {
   color: red;
@@ -130,7 +101,6 @@
 }
 
 #responsive-navbar-nav {
-  /* justify-content: flex-end; */
   color: goldenrod;
 }
 

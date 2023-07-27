@@ -1,5 +1,5 @@
 
-
+/* knowledgeStyling.module.css */
 .container {
     max-width: 100%;
     margin: 0 auto;
@@ -21,6 +21,10 @@
     margin-right: auto;
     margin-top: 20%;
     /* z-index: 999; */
+    animation: glow 1.3s infinite; 
+    transition: box-shadow 0.5s ease-in-out; 
+    box-shadow: 0 0 5px white; 
+
   }
   
   .knowledge-component h2 {
@@ -92,7 +96,19 @@
 
   }
 
-  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px white;
+    }
+    50% {
+      box-shadow: 0 0 20px white; 
+    }
+    100% {
+      box-shadow: 0 0 5px white; 
+    }
+  }
+
+
 
 
 #topic-1 {
@@ -246,8 +262,8 @@ h1 {
 }
 
 #glossaryButton {
-  border: 2px solid goldenrod;
-  color: goldenrod;
+  border: 2px solid #ff5f1f;
+  color: white;
   background: transparent;
   max-width: 5%;
   align-items: center;
@@ -262,6 +278,6 @@ h1 {
 }
 
 #glossaryButton:hover {
-  background: goldenrod;
+  background: #ff5f1f;
   color: white;
 }

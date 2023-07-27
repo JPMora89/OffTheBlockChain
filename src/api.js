@@ -21,9 +21,7 @@ class OtbcApi {
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
     const url = `${BASE_URL}/${endpoint}`;
     const headers = { Authorization: `Bearer ${OtbcApi.token}` };
-    const params = (method === "get")
-        ? data
-        : {};
+    const params = method === "get" ? data : {};
 
     try {
       return (await axios({ url, method, data, params, headers })).data;
@@ -35,113 +33,92 @@ class OtbcApi {
   }
 
   // Individual API routes
-  static async login({username, password}) {
-    let res = await this.request('auth/token', {
-      username: username,
-      password: password},
-      "post");
+  static async login({ username, password }) {
+    let res = await this.request(
+      "auth/token",
+      {
+        username: username,
+        password: password,
+      },
+      "post"
+    );
     this.token = res.token;
     return res;
   }
 
   static async register(formData) {
-    let res = await this.request('auth/register', formData, 'post');
+    let res = await this.request("auth/register", formData, "post");
     this.token = res.token;
     return res;
   }
-// Adding coins to coinlist section
+  // Adding coins to coinlist section
 
-static async addAllCoinstoDB(){
-  let res = await this.request('coins/');
-
-  console.log(res);
-  return res;
-}
-
-
-
-
-  static async addAllCoins(coins){
-    let res = await this.request('coins/', coins, 'post');
+  static async addAllCoinstoDB() {
+    let res = await this.request("coins/");
 
     console.log(res);
     return res;
   }
- 
-  /** Get details on a coin by name. */
 
-// Get coin by ID
-  static async getCoin(id) {
-    let res = await this.request(`coins/${id}`);
-        console.log(res.coin)
+  static async addAllCoins(coins) {
+    let res = await this.request("coins/", coins, "post");
 
-    return res.coin;
-
-  }
-
-// Get coin by name or symbol
-static async getCoinByNameOrSymbol(coinNameOrSymbol) {
-  console.log("This function has been called: getCoinByNameOrSymbol")
-  let res = await this.request(`coins/name-or-symbol/${coinNameOrSymbol}`);
-  console.log(res.coin)
-
-  return res.coin;
-}
-
-// Get coin by name
-static async getCoinByName(coinName) {
-  let res = await this.request(`coins/name/${coinName}`);
-  return res.coin;
-}
-// static async getCoinByName(coinName) {
-//   try {
-//     let res = await this.request(`coins/name/${coinName}`);
-//     console.log(res); // Log the entire response to check its format
-//     console.log("This function has been called: getCoinByName");
-//     return res; // Return the entire response
-//   } catch (error) {
-//     console.error('Error fetching coin by name:', error);
-//     return null;
-//   }
-// }
-
-
-
-
-  // Get top 25 coins
-  static async getAllCoins() {
-    let res = await this.request('coins/all');
-    return res.coins;
-  }
- 
-  
-
-  static async getSearchedCoins(coin_name) {
-    let res = await this.request(`coins/${coin_name}`, {name: coin_name});
-    return res.coins;
-  }
-
-
-
-static async addCoin(coin, watchlistId) {
-    let res = await this.request('coins/update', coin, 'post');
-    
-    if (res.message === 'Coin added to watchlist') {
-      await this.addToWatchlist(coin.coinId, watchlistId);
-    }
-    
+    console.log(res);
     return res;
   }
 
+  /** Get details on a coin by name. */
 
+  // Get coin by ID
+  static async getCoin(CoinId) {
+    let res = await this.request(`coins/${CoinId}`);
+    console.log(res.coin);
+
+    return res.coin;
+  }
+
+  // Get coin by name or symbol
+  static async getCoinByNameOrSymbol(coinNameOrSymbol) {
+    console.log("This function has been called: getCoinByNameOrSymbol");
+    let res = await this.request(`coins/name-or-symbol/${coinNameOrSymbol}`);
+    // console.log(res.coin)
+
+    return res.coin;
+  }
+
+  // Get coin by name
+  static async getCoinByName(coinName) {
+    let res = await this.request(`coins/name/${coinName}`);
+    console.log(res.coin);
+    return res.coin;
+  }
+
+  // Get top 25 coins
+  static async getAllCoins() {
+    let res = await this.request("coins/all");
+    return res.coins;
+  }
+
+  static async getSearchedCoins(coin_name) {
+    let res = await this.request(`coins/${coin_name}`, { name: coin_name });
+    return res.coins;
+  }
+
+  static async addCoin(coin, watchlistId) {
+    let res = await this.request("coins/update", coin, "post");
+
+    if (res.message === "Coin added to watchlist") {
+      await this.addToWatchlist(coin.coinId, watchlistId);
+    }
+
+    return res;
+  }
 
   // watchlist routes
   static async watchlist() {
-    let res = await this.request('watchlist/');
+    let res = await this.request("watchlist/");
     return res.watchlist;
   }
-
-
 
   static async getUser(username) {
     let res = await this.request(`user/${username}`);
@@ -149,121 +126,80 @@ static async addCoin(coin, watchlistId) {
   }
 
   static async updateUser(profileData, username) {
-    let res = await this.request(`user/${username}`,
-    profileData,
-    'patch'
-    );
+    let res = await this.request(`user/${username}`, profileData, "patch");
     return res.user;
   }
 
-
-
   static async addToWatchlist(coinId, watchlistId) {
-    let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'post');
-    console.log(res)
+    let res = await this.request(
+      `watchlist/${watchlistId}/${coinId}`,
+      {},
+      "post"
+    );
+    console.log(res);
     return res;
   }
-  
-    // static async removeFromWatchlist(coinId, watchlistId) {
-    //     let res = await this.request(`watchlist/${watchlistId}/${coinId}`, {}, 'delete');
-    //     return res;
-    // }
-    // static async removeFromWatchlist(coinName, watchlistId) {
-    //   try {
-    //     // Fetch the coin's ID based on its name from the backend API
-    //     const coin = await this.getCoinByName(coinName);
-    
-    //     if (!coin) {
-    //       throw new Error(`Coin not found: ${coinName}`);
-    //     }
-    
-    //     const { id: coinId } = coin;
-    
-    //     // Remove the coin from the watchlist
-    //     const res = await this.request(
-    //       `watchlist/${watchlistId}/${coinId}`,
-    //       {},
-    //       'delete'
-    //     );
-    
-    //     return res;
-    //   } catch (error) {
-    //     console.error('Error removing coin from watchlist:', error);
-    //     throw error;
-    //   }
-    // }
-    static async removeFromWatchlist(coinName, watchlistId) {
-      try {
-        // Fetch the coin's ID based on its name from the backend API
-        const coin = await this.getCoinByName(coinName);
-    
-        if (!coin) {
-          throw new Error(`Coin not found: ${coinName}`);
-        }
-    
-        const { id: coinId } = coin;
-    
-        // Remove the coin from the watchlist
-        const res = await this.request(
-          `watchlist/${watchlistId}/${coinId}`,
-          {},
-          'delete'
-        );
-    
-        // Check if the response contains the 'message' property
-        if (!res || !res.message) {
-          throw new Error(
-            `Unexpected response from the backend API: ${JSON.stringify(res)}`
-          );
-        }
-    
-        return res;
-      } catch (error) {
-        console.error('Error removing coin from watchlist:', error);
-        throw error;
+
+  static async removeFromWatchlist(coinName, watchlistId) {
+    try {
+      const coin = await this.getCoinByName(coinName);
+      console.log(coin);
+      console.log("This function has been called: removeFromWatchlist");
+
+      if (!coin) {
+        throw new Error(`Coin not found: ${coinName}`);
       }
-    }
-    // static async removeFromWatchlist(coinId, watchlistId) {
-    //   try {
-    //     const res = await this.request(
-    //       `watchlist/${watchlistId}/${coinId}`,
-    //       {},
-    //       'delete'
-    //     );
-    //     return res;
-    //   } catch (error) {
-    //     console.error("Error removing coin from watchlist:", error);
-    //     throw error;
-    //   }
-    // }
 
-    static async getWatchlist() {
-        let res = await this.request(`watchlist/`);
-        return res.watchlist;
-    }
+      const { id: coinId } = coin;
+      console.log(coinId);
+      console.log("This function has been called: removeFromWatchlist");
 
-    static async getWatchlistCoin(coin_name) {
-        let res = await this.request(`watchlist/${coin_name}`);
-        return res.coin;
+      const res = await this.request(
+        `watchlist/${watchlistId}/${coinId}`,
+        {},
+        "delete"
+      );
+      console.log("This function has been called: removeFromWatchlist");
+
+      if (!res || !res.message) {
+        throw new Error(
+          `Unexpected response from the backend API: ${JSON.stringify(res)}`
+        );
+      }
+
+      return res;
+    } catch (error) {
+      console.error("Error removing coin from watchlist:", error);
+      throw error;
     }
-// ...
+  }
+
+  static async getWatchlist() {
+    let res = await this.request(`watchlist/`);
+    return res.watchlist;
+  }
+
+  static async getWatchlistCoin(coin_name) {
+    let res = await this.request(`watchlist/${coin_name}`);
+    return res.coin;
+  }
+  // ...
 
   static async createWatchlist(name) {
-  let res = await this.request('watchlist/', { name }, 'post');
-  return res.watchlist;
-};
+    let res = await this.request("watchlist/", { name }, "post");
+    return res.watchlist;
+  }
 
-// watchlist routes
-static async getAllWatchlists() {
-  let res = await this.request('watchlist/');
-  return res.watchlists;
-}
+  // watchlist routes
+  static async getAllWatchlists() {
+    let res = await this.request("watchlist/");
+    return res.watchlists;
+  }
 
-static async getWatchlistItems(watchlistId) {
-  let res = await this.request(`watchlist/${watchlistId}/items`);
-  return res.watchlistItems;
-}
-
+  static async getWatchlistItems(watchlistId) {
+    let res = await this.request(`watchlist/${watchlistId}/items`);
+    return res.watchlistItems;
+  }
 
   // Retrieve watchlists from the backend and ensure they are available
   // every time the page reloads
@@ -272,26 +208,27 @@ static async getWatchlistItems(watchlistId) {
     try {
       watchlists = await this.getAllWatchlists();
     } catch (error) {
-      console.error('Error retrieving watchlists:', error);
+      console.error("Error retrieving watchlists:", error);
       watchlists = [];
     }
     return watchlists;
   }
 
   static async updateWatchlist(watchlistId, updatedWatchlist) {
-    let res = await this.request(`watchlist/${watchlistId}`, updatedWatchlist, 'patch');
+    let res = await this.request(
+      `watchlist/${watchlistId}`,
+      updatedWatchlist,
+      "patch"
+    );
     return res.watchlist;
   }
-  
+
   static async deleteWatchlist(watchlistId) {
-    let res = await this.request(`watchlist/${watchlistId}`, {}, 'delete');
-        console.log(res)
+    let res = await this.request(`watchlist/${watchlistId}`, {}, "delete");
+    console.log(res);
 
     return res;
   }
-
-
 }
-
 
 export default OtbcApi;

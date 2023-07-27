@@ -13,4 +13,9 @@
 
 #watchlistcontainer {
     margin-bottom: 20%;
+    margin-right: 10%;
+}
+
+#backtocoinsbutton {
+    color: #FF5F1F;
 }

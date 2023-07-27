@@ -9,6 +9,7 @@ margin-bottom: 7%;
     color: red;
     justify-content: center;
     margin-left: 43%;
+    margin-top: 5%;
 }
 
 #coindDetailDescription {
@@ -21,6 +22,7 @@ margin-bottom: 7%;
     margin-top: 5%;
     margin-bottom: 5%;
     color: red;
+
 }
 
 
@@ -30,8 +32,68 @@ margin-bottom: 7%;
     color: red;
 
 
+
 }
 
-.coinMarketDataHeader {
-    color: red;
+#coinnewsheader {
+    animation: glow 0.8s ease-in-out infinite alternate;
+
 }
+
+
+#coinMarketDataHeader {
+    color: red;
+    animation: glow 0.8s ease-in-out infinite alternate;
+
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 20px #ffffff;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #a3246a;
+    }
+  }
+
+#backtocointablebutton {
+    color: #FF5F1F;
+}
+
+
+#addtowatchlistheader {
+    /* text-align: end; */
+    margin-bottom: -4%;
+    /* margin-right: 10%; */
+    text-align: center;
+    margin-top: 5%;
+  
+}
+/* 
+#addtowatchlistbutton {
+ text-align: end;
+
+} */
+
+#addtowatchlistbutton:hover {
+    background-color: white;
+}
+
+#watchlistSelect {
+    margin-right: 5%;
+    /* margin-bottom: 10%; */
+
+
+    
+}
+
+#coindetailstitle {
+    text-align: center;
+}
+
+/* #addtowatchlistDiv {
+    right: 0;
+    margin-right: -30%;
+    display: flex;
+    justify-content: flex-end;
+} */

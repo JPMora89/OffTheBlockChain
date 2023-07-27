@@ -107,6 +107,9 @@
     border: 1px solid #ddd;
     padding: 20px;
     margin: 0 auto 20px;
+    animation: glow 2s infinite; 
+    transition: box-shadow 0.3s ease-in-out; 
+    box-shadow: 0 0 5px white; 
   }
   
   h3 {

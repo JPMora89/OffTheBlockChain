@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios, { all } from "axios";
 import CoinDetail from "./CoinsDetail";
-import Watchlist from "../watchlistComponents/watchlist";
 import { Helmet } from "react-helmet";
 import OtbcApi from "../api";
-import CreateWatchlist from "../watchlistComponents/CreateWatchlist";
-import WatchlistContainer from "../watchlistComponents/WatchlistContainer";
-import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
-import { Switch, Route } from "react-router-dom";
-import CoinDetailsPage from "./CoinDetailsPage";
-import coinlock from "../assets/images/coinLocknoBG.png";
 import cryptocoins from "../assets/images/cryptocoins.png";
-import bitcoinethereum from "../assets/images/bitcoinethereum.jpg";
-import bitcoinonfire from "../assets/images/bitcoinonfire.jpg";
 import bitcointransformed from "../assets/images/bitcointransformed.png";
 import cryptocurrencytransformed from "../assets/images/cryptocurrencytransformed.png";
 import "./coinTable.css";
@@ -49,13 +40,10 @@ const CoinTable = () => {
   //     console.error("Error adding coins to DB:", error);
   //   }
   // };
-  
 
   // useEffect(() => {
   //   addCoinstoDB();
   // }, []);
- 
-  
 
   useEffect(() => {
     const fetchTrendingCoins = async () => {
@@ -75,8 +63,6 @@ const CoinTable = () => {
   const allCoins = async () => {
     try {
       const response = await OtbcApi.getAllCoins();
-      
-
 
       setIsLoading(false);
       setUserCoins(response);
@@ -91,7 +77,6 @@ const CoinTable = () => {
 
   const addToWatchlist = async (coinId) => {
     if (selectedWatchlist) {
-
       try {
         await OtbcApi.addToWatchlist(coinId, selectedWatchlist);
         const updatedWatchlists = watchlists.map((watchlist) =>
@@ -100,16 +85,8 @@ const CoinTable = () => {
             : watchlist
         );
         alert("Coin added to watchlist");
-        console.log(watchlists + "watchlists")
+        console.log(watchlists + "watchlists");
         setWatchlists(updatedWatchlists);
-        console.log(updatedWatchlists + "updated watchlists")
-        console.log(watchlists.map(watchlist => watchlist.name));
-        console.log(updatedWatchlists.map(watchlist => watchlist.name));
-        console.log(watchlists.map(watchlist => watchlist.coins));
-        console.log(watchlists[0].coins);
-        console.log(updatedWatchlists[0].coins);
-        console.log(watchlists[1].coins);
-
       } catch (error) {
         console.error("Error adding coin to watchlist:", error);
       }
@@ -117,34 +94,30 @@ const CoinTable = () => {
   };
 
   const [watchlistItems, setWatchlistItems] = useState([]);
-  console.log('Watchlists received:', watchlists);
-  
+  console.log("Watchlists received:", watchlists);
 
-let watchlistids = watchlists.map((watchlist) => {
-  
-  return watchlist.watchlist_id
-})
+  let watchlistids = watchlists.map((watchlist) => {
+    return watchlist.watchlist_id;
+  });
 
-useEffect(() => {
-  const fetchWatchlistItems = async () => {
-    try {
-      const items = [];
-      for (const watchlistId of watchlistids) {
-        const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
-        items.push(...watchlistItems);
-        console.log('Watchlist items:', watchlistItems);
-        console.log(watchlistId)
-
+  useEffect(() => {
+    const fetchWatchlistItems = async () => {
+      try {
+        const items = [];
+        for (const watchlistId of watchlistids) {
+          const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
+          items.push(...watchlistItems);
+          console.log("Watchlist items:", watchlistItems);
+          console.log(watchlistId);
+        }
+        setWatchlistItems(items);
+      } catch (error) {
+        console.error("Error fetching watchlist items:", error);
       }
-      setWatchlistItems(items);
-    } catch (error) {
-      console.error('Error fetching watchlist items:', error);
-    }
-  };
+    };
 
-  fetchWatchlistItems();
-}, []);
-
+    fetchWatchlistItems();
+  }, []);
 
   useEffect(() => {
     console.log(selectedCoinId);
@@ -185,7 +158,7 @@ useEffect(() => {
           {/* <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>  */}
         </Helmet>
         <coingecko-coin-price-marquee-widget
-        id="coinmarquee"
+          id="coinmarquee"
           coin-ids="bitcoin,ethereum,ripple,matic-network,solana,dogecoin,tether,usd-coin,cosmos"
           currency="usd"
           background-color="#070c32"
@@ -218,8 +191,9 @@ useEffect(() => {
         ></div>
       </span>
       <p id="cointableintro">
-        Welcome to the Coin Table! Here, you can explore detailed information about various cryptocurrencies. 
-        Click on a coin's name to view its details and add it to your watchlist to stay updated on its performance. 
+        Welcome to the Coin Table! Here, you can explore detailed information
+        about various cryptocurrencies. Click on a coin's name to view its
+        details and add it to your watchlist to stay updated on its performance.
         Enjoy your journey into the exciting world of cryptocurrencies!
       </p>
 
@@ -229,7 +203,7 @@ useEffect(() => {
       ) : (
         <>
           <select
-          id="watchlistSelect"
+            id="watchlistSelect"
             value={selectedWatchlist.name}
             onChange={handleWatchlistChange}
           >
@@ -240,156 +214,149 @@ useEffect(() => {
               </option>
             ))}
           </select>
-            {/* <img src={coinlock} alt="CoinLock" id="coinlockimage" /> */}
 
           <div className="table-container">
-          <div className="image-left">
-    <img src={cryptocoins} alt="Cryptocoins" id="cryptocoins" />
-  </div>
+            <div className="image-left">
+              <img src={cryptocoins} alt="Cryptocoins" id="cryptocoins" />
+            </div>
 
-  <div className="table-wrapper">
-            <table id="topCoinTable">
-              <thead id="topcointablehead"> 
-                <tr>
-                  <th></th>
-                  <th >Name</th>
-                  <th >Symbol</th>
-                  <th >Market Cap</th>
-                  <th >Price</th>
-                  <th >Price Change (24h)</th>
-                  <th >Action</th>
-                </tr>
-              </thead>
-              <tbody >
-                {userCoins.map((coin) => (
-                  <tr key={coin.id}>
-                    <td id="tableimage">
-                      <img
-                        src={coin.image}
-                        alt={coin.name}
-                        style={{ width: "30px", height: "30px" }}
-                      />
-                    </td>
-
-                    <Link
-                      to={`/coin/${coin.coin_id}`}
-                      onClick={() =>
-                        setSelectedCoinName(coin.coin_id)
-                      }
-                      className="coin-link"
-                    >
-                      {coin.name}
-                    </Link>
-                    <td id="topcointablehead">{coin.symbol.toUpperCase()}</td>
-                    <td id="topcointablehead">${coin.market_cap.toLocaleString()}</td>
-                    <td id="topcointablehead">${coin.price.toLocaleString()}</td>
-                    <td id="topcointablehead">{coin.price_change_percentage_24h.toFixed(3)}%</td>
-                    <td>
-                      {selectedWatchlist &&
-                      watchlists.some(
-                        (watchlist) =>
-                          watchlist.id === selectedWatchlist &&
-                          watchlist.coins.includes(coin.id)
-                      ) ? (
-                        <button onClick={() => removeFromWatchlist(coin.id)}>
-                          Remove
-                        </button>
-                      ) : (
-                        <button 
-                        className="btn-2" 
-                          onClick={() =>
-                            addToWatchlist(coin.id, selectedWatchlist)
-                          }
-                        ><span>
-                          Add
-                          </span>
-                        </button>
-                      )}
-                    </td>
+            <div className="table-wrapper">
+              <table id="topCoinTable">
+                <thead id="topcointablehead">
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Symbol</th>
+                    <th>Market Cap</th>
+                    <th>Price</th>
+                    <th>Price Change (24h)</th>
+                    <th>Action</th>
                   </tr>
-                ))}
-              </tbody>
-            </table></div>
-            
+                </thead>
+                <tbody>
+                  {userCoins.map((coin) => (
+                    <tr key={coin.id}>
+                      <td id="tableimage">
+                        <img
+                          src={coin.image}
+                          alt={coin.name}
+                          style={{ width: "30px", height: "30px" }}
+                        />
+                      </td>
+
+                      <Link
+                        to={`/coin/${coin.coin_id}`}
+                        onClick={() => setSelectedCoinName(coin.coin_id)}
+                        className="coin-link"
+                      >
+                        {coin.name}
+                      </Link>
+                      <td id="topcointablehead">{coin.symbol.toUpperCase()}</td>
+                      <td id="topcointablehead">
+                        ${coin.market_cap.toLocaleString()}
+                      </td>
+                      <td id="topcointablehead">
+                        ${coin.price.toLocaleString()}
+                      </td>
+                      <td id="topcointablehead">
+                        {coin.price_change_percentage_24h.toFixed(3)}%
+                      </td>
+                      <td>
+                        {selectedWatchlist &&
+                        watchlists.some(
+                          (watchlist) =>
+                            watchlist.id === selectedWatchlist &&
+                            watchlist.coins.includes(coin.id)
+                        ) ? (
+                          <button onClick={() => removeFromWatchlist(coin.id)}>
+                            Remove
+                          </button>
+                        ) : (
+                          <button
+                            className="btn-2"
+                            onClick={() =>
+                              addToWatchlist(coin.id, selectedWatchlist)
+                            }
+                          >
+                            <span>Add</span>
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
             <div className="image-right">
-    <img src={cryptocurrencytransformed} alt="cryptotransformed" id="cryptotransformed" />
-  </div>
-            {/* <img
-              src={bitcoinethereum}
-              alt="bitcoinethereum"
-              id="bitcoinethereum"
-            /> */}
+              <img
+                src={cryptocurrencytransformed}
+                alt="cryptotransformed"
+                id="cryptotransformed"
+              />
+            </div>
           </div>
           {selectedCoinName && (
-            <CoinDetail coinId={selectedCoinName.toLowerCase()} 
-            watchlists={watchlists}
-            addToWatchlist={addToWatchlist} />
+            <CoinDetail
+              coinId={selectedCoinName.toLowerCase()}
+              watchlists={watchlists}
+              addToWatchlist={addToWatchlist}
+            />
           )}
-          {/* <CreateWatchlist
-                handleWatchlistChange={handleWatchlistChange}
-                newWatchlistName={newWatchlistName}
-              />
-           */}
-          {coins.length > 0 && (
-            <>
-              {/* <WatchlistContainer
-                watchlists={watchlists}
-                coins={coins}
-                removeFromWatchlist={removeFromWatchlist}
-                addToWatchlist={addToWatchlist}
-                handleDeleteWatchlist={handleDeleteWatchlist}
-              /> */}
-            </>
-          )}
+
+          {coins.length > 0 && <></>}
           {/* <img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" /> */}
         </>
       )}
 
-      {/* Trending Coins */}
       <div className="trending-container">
-      <img src={bitcointransformed} alt="bitcointransformed" id="bitcointransformed" />
-      <h2>Trending Coins</h2>
-            {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <table id="trendingcointable">
-          <thead id="topcointablehead"> 
-            <tr>
-              <th></th>
-              <th id="topcointablehead">Rank</th>
-              <th>Name</th>
-              <th id="topcointablehead">Symbol</th>
-              <th>Price(in btc)</th>
-              {/* <th>Price Change (24h)</th> */}
-            </tr>
-          </thead>
-          <tbody>
-            {trendingCoins.map((coin, index) => (
-              <tr key={coin.item.id}>
-                {/* <img src={coin.item.thumb} alt={coin.item.name} /> */}
-                <td id="trendingtableimage">
-          <img
-            src={coin.item.thumb}
-            alt={coin.item.name}
-            style={{ width: "30px", height: "30px" }}
-          />
-        </td>
-
-                <td id="topcointablehead">{index + 1}</td>
-                <td>
-                  <Link to={`/coin/${coin.item.id}`}>{coin.item.name}</Link>
-                </td>
-                <td id="topcointablehead">{coin.item.symbol.toUpperCase()}</td>
-                <td>${coin.item.price_btc}</td>
-                {/* <td>N/A</td> */}
-                <td></td>
+        <img
+          src={bitcointransformed}
+          alt="bitcointransformed"
+          id="bitcointransformed"
+        />
+        <h2>Trending Coins</h2>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <table id="trendingcointable">
+            <thead id="topcointablehead">
+              <tr>
+                <th></th>
+                <th id="topcointablehead">Rank</th>
+                <th id="trendingcoinname">Name</th>
+                <th id="topcointablehead">Symbol</th>
+                <th id="trendingcoinprice">Price(in btc)</th>
+                {/* <th>Price Change (24h)</th> */}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-</div>
+            </thead>
+            <tbody>
+              {trendingCoins.map((coin, index) => (
+                <tr key={coin.item.id}>
+                  <td id="trendingtableimage">
+                    <img
+                      src={coin.item.thumb}
+                      alt={coin.item.name}
+                      style={{ width: "30px", height: "30px" }}
+                    />
+                  </td>
 
+                  <td id="topcointablehead">{index + 1}</td>
+                  <td>
+                    <Link id="trendingcoinname" to={`/coin/${coin.item.id}`}>
+                      {coin.item.name}
+                    </Link>
+                  </td>
+                  <td id="topcointablehead">
+                    {coin.item.symbol.toUpperCase()}
+                  </td>
+                  <td>${coin.item.price_btc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   );
 };

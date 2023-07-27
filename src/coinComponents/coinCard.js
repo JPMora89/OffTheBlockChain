@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const CoinCard = ({ symbol }) => {
   const [coinData, setCoinData] = useState(null);
@@ -12,7 +12,7 @@ const CoinCard = ({ symbol }) => {
         );
         setCoinData(response.data);
       } catch (error) {
-        console.error('Error fetching coin data:', error);
+        console.error("Error fetching coin data:", error);
       }
     };
 
@@ -24,7 +24,8 @@ const CoinCard = ({ symbol }) => {
   }
 
   const { name, market_data } = coinData;
-  const { market_cap, current_price, price_change_percentage_24h } = market_data;
+  const { market_cap, current_price, price_change_percentage_24h } =
+    market_data;
 
   return (
     <div className="coin-card">

@@ -129,7 +129,7 @@ const WatchlistPage = (items) => {
       <Helmet>
       </Helmet>
       <img src={BlockchainLink} alt="blockchainLink" id="blockchainLink" />
-      <Link to="/">Back to Coins</Link>
+      <Link id='backtocoinsbutton' to="/">Back to Coins</Link>
 
       <h1 id='watchlistpageheader'>Watchlists</h1>
       <CreateWatchlist updateWatchlist={updateWatchlists} />

@@ -194,34 +194,37 @@ h1 {
 
 .container {
     max-width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 20px;
     color: #fff;
     font-family: Arial, sans-serif;
     position: relative;
+    /* margin-top: 2%; */
   }
   
 
   .header {
     text-align: center;
     margin-bottom: 40px;
+    margin-top: 10%;
   }
   
   .header h1 {
     font-size: 36px;
     font-weight: bold;
+    margin-top: 10%;
   }
   
   .header p {
-    /* font-size: 18px;
-    opacity: 0.8; */
+    /* font-size: 18px; */
+    opacity: 0.8;
     font-size: 18px;
     opacity: 0.8;
-    position: absolute; /* Add absolute positioning to the paragraph */
-    top: calc(50% + 40px); /* Adjust the vertical position as needed */
-    left: 50%; /* Adjust the horizontal position as needed */
-    transform: translateX(-50%); /* Center the paragraph horizontally */
-    z-index: 1; /* Ensure the paragraph is above the video (z-index 1) */
+    position: absolute; 
+    top: calc(50% + 40px); 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1; 
     background-color: transparent;
   }
   
@@ -276,7 +279,7 @@ h1 {
 
   #exploremore {
     background-color: #FF5F1F;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     z-index: 999;
     max-width: 29%;
     justify-content: center;
@@ -292,18 +295,22 @@ h1 {
     font-weight: bold;
     position: absolute;
     top: 0;
-    margin-top: 10%; 
+    /* margin-top: -6%;  */
     left: 50%; 
     transform: translate(-50%, -50%); 
     z-index: 1; 
-    background-color: transparent;
+    background-color:#070c32 ;
     box-shadow: #bdb0b0;
     /* text-shadow: #a02121; */
     /* text-shadow: 6px 6px 6px #f1f1f1; */
   }
 
   #homepageheadersentence {
-    margin-top: -33%;
+    /* margin-top: -20%; */
+    top: 0;
+    right: 0;
+    margin-left: 20%;
+    margin-top: 10%;
   }
 
 #background-video {
@@ -334,6 +341,6 @@ h1 {
 
 #aboutotbc {
     background-color: transparent;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
     
 }

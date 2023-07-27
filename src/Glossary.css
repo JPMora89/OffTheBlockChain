@@ -4,7 +4,7 @@
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 20px;
-    background-color: #000000;
+    /* background-color: #000000; */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -52,3 +52,13 @@
     transition: background-color 0.2s ease;
   }
   
+  #backtoknowledgebutton {
+    color: #ff5f1f;
+  }
+  #backtoknowledgebutton:hover {
+    color: white;
+    transition: background-color 0.2s ease;
+    background-color: #ff5f1f;
+    max-width: 8%;
+    align-items: center;
+  }

@@ -19,3 +19,48 @@
   #createwatchlistheader {
     margin-right: 20%;
   }
+
+  #watchlistbox {
+    border: 2px inset #FF5F1F;
+    position: relative;
+    animation: glow 2s ease-in-out infinite alternate;
+
+
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 20px #ffffff;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #a3246a;
+    }
+  }
+
+  #watchlistname {
+    text-align: center;
+  }
+
+  #watchlistcoinname {
+    /* margin-right: 15%; */
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  #watchlistcoinname :hover {
+    background-color: white;
+  }
+
+  #deletewatchlistbutton {
+    /* bottom: 0; */
+    /* position: absolute; */
+    bottom: 0;
+    right: 0;
+  }
+
+  #removefromwatchlistbutton {
+    margin-left: 20%;
+    right: 0;
+
+  }

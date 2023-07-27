@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./coinDetail.css"
 
 const CoinNews = ({ coinId }) => {
   const [news, setNews] = useState([]);
@@ -9,12 +10,12 @@ const CoinNews = ({ coinId }) => {
     const fetchCoinNews = async () => {
       try {
         const response = await axios.get(
-            `https://newsapi.org/v2/everything?q=${coinId}&apiKey=aa38df6ade6f4268bb8484a411245302`
-          );
+          `https://newsapi.org/v2/everything?q=${coinId}&apiKey=aa38df6ade6f4268bb8484a411245302`
+        );
         setNews(response.data.articles);
         setIsLoading(false);
       } catch (error) {
-        console.error('Error fetching coin news:', error);
+        console.error("Error fetching coin news:", error);
         setIsLoading(false);
       }
     };
@@ -26,12 +27,12 @@ const CoinNews = ({ coinId }) => {
 
   return (
     <div className="coinNews">
-      <h2>Coin News</h2>
+      <h2 id="coinnewsheader">Coin News</h2>
       {isLoading ? (
         <p>Loading news...</p>
       ) : (
         <ul>
-          {news.slice(0,5).map((article) => (
+          {news.slice(0, 5).map((article) => (
             <li key={article.id}>
               <a href={article.url} target="_blank" rel="noopener noreferrer">
                 {article.title}
