@@ -2,12 +2,6 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Homepage from './Homepage';
-import Watchlist from "./watchlistComponents/watchlist";
-import CoinDetail from "./coinComponents/CoinsDetail";
-import KnowledgeComponent from "./knowledgeComponents/KnowledgeComponent";
-import KnowledgeContainer from "./knowledgeComponents/KnowledgeContainer";
-import coinTable from "./coinComponents/coinTable";
-import WatchlistContainer from "./watchlistComponents/WatchlistContainer";
 import WatchlistPage from "./watchlistComponents/WatchlistPage";
 import CoinDetailsPage from "./coinComponents/CoinDetailsPage"; 
 import LoginForm from './userComponents/LoginForm';

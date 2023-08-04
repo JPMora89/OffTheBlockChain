@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserCoinsProvider } from './userCoinContext';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import OtbcApi from './api';
+
+
+OtbcApi.setupInterceptors();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -32,6 +32,24 @@ class OtbcApi {
     }
   }
 
+static setupInterceptors() {
+    axios.interceptors.request.use(
+      (config) => {
+        // Check if the token is available and set it in the headers
+        if (OtbcApi.token) {
+          config.headers["Authorization"] = `Bearer ${OtbcApi.token}`;
+        }
+        return config;
+      },
+      (error) => {
+        return Promise.reject(error);
+      }
+    );
+  }
+
+
+
+  
   // Individual API routes
   static async login({ username, password }) {
     let res = await this.request(
