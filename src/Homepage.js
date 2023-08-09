@@ -3,8 +3,6 @@ import "./Homepage.css";
 import { Link } from "react-router-dom";
 
 import purpleearth from "./assets/images/purpleearth.jpg";
-import BackgroundVideo from "./assets/images/backgroundvideo3.mp4";
-import { Helmet } from "react-helmet";
 
 const Homepage = () => {
   return (

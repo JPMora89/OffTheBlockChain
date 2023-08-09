@@ -56,9 +56,20 @@ margin-bottom: 7%;
     }
   }
 
-#backtocointablebutton {
+/* #backtocointablebutton {
     color: #FF5F1F;
-}
+} */
+
+#backtocointablebutton {
+    color: #ff5f1f;
+  }
+  #backtocointablebutton:hover {
+    color: white;
+    transition: background-color 0.2s ease;
+    background-color: #ff5f1f;
+    max-width: 5%;
+    align-items: center;
+  }
 
 
 #addtowatchlistheader {

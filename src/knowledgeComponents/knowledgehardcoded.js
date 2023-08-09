@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import KnowledgeComponent from "./KnowledgeComponent";
 import KnowledgeTopicList from "./KnowledgeTopics";
@@ -12,28 +12,28 @@ import defitransformed from "../assets/images/defitransformed.png";
 import blockchainLink from "../assets/images/blockchainLink.png";
 import "./knowledgeStyling.css";
 
-const KnowledgeHardCode = ( ) => {
-
-
+const KnowledgeHardCode = () => {
   return (
-    
-
     <div id="knowledge-section">
-                {/* <img src={defitransformed} alt="defitransformed" id="defitransformed" /> */}
+      {/* <img src={defitransformed} alt="defitransformed" id="defitransformed" /> */}
 
-       <div class="title">
- <h1 id="knowledgeHeadline">What you need to know <br></br> about BlockChain <br></br> technology</h1>
+      <div class="title">
+        <h1 id="knowledgeHeadline">
+          What you need to know <br></br> about BlockChain <br></br> technology
+        </h1>
+      </div>
+      <img
+        src={blockchainTransformed}
+        alt="blockchainTransformed"
+        id="blockchainTransformed"
+      />
 
-</div>
-        <img src={blockchainTransformed} alt="blockchainTransformed" id="blockchainTransformed" />
+      <Link id="glossaryButton" to="/glossary">
+        Glossary
+      </Link>
+      {/* <img src={blockchain} className="headerImage"></img> */}
 
-        <Link id='glossaryButton' 
-                to="/glossary">Glossary
-              </Link>
-         {/* <img src={blockchain} className="headerImage"></img> */}
-         
       {/* <h1 id="knowledgeHeader">Knowledge</h1> */}
-   
 
       <div id="topic-1" class="knowledge-component">
         <h2>Introduction to Cryptocurrencies</h2>
@@ -319,17 +319,14 @@ const KnowledgeHardCode = ( ) => {
             activities, especially if you're new to
             investing.________________________________
           </p>
-                          
-         
 
-  <img src={dApps} className="dapps"></img>
-</div>
+          <img src={dApps} className="dapps"></img>
         </div>
- <div className="imageDiv">
-            <img src={defitransformed} alt="defitransformed" id="defitransformed" />
-                          {/* <img src={blockchainLink} alt="blockchainLink" id="blockchainLink" /> */}
       </div>
-
+      <div className="imageDiv">
+        <img src={defitransformed} alt="defitransformed" id="defitransformed" />
+        {/* <img src={blockchainLink} alt="blockchainLink" id="blockchainLink" /> */}
+      </div>
     </div>
   );
 };

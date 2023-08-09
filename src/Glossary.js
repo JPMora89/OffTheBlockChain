@@ -110,7 +110,7 @@ const Glossary = () => {
 
   return (
     <div className="glossary">
-        <Link id="backtoknowledgebutton" to="/knowledge">Back to Knowledge</Link>
+        <Link id="backtoknowledgebutton" to="/knowledge">Back</Link>
       <h2>Glossary of Blockchain/Crypto Terms</h2>
       <ul>
         {glossaryData.map((item, index) => (

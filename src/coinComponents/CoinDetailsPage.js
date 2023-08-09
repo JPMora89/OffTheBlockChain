@@ -13,7 +13,7 @@ const CoinDetailsPage = ({ watchlists, addToWatchlist }) => {
     <div>
       <h2 id="coindetailstitle">Coin Details</h2>
       <Link id="backtocointablebutton" to="/">
-        Back to Coin Table
+        Back
       </Link>
       <CoinDetail
         coinId={coinId}

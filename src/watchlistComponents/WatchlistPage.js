@@ -51,10 +51,10 @@ const WatchlistPage = (items) => {
       <Helmet>
       </Helmet>
       <img src={BlockchainLink} alt="blockchainLink" id="blockchainLink" />
-      <Link id='backtocoinsbutton' to="/">Back</Link>
+     
 
       <h1 id='watchlistpageheader'>Watchlists</h1>
-      <CreateWatchlist updateWatchlist={updateWatchlists} />
+      <CreateWatchlist updateWatchlist={updateWatchlists} /> <Link id='backtocoinsbutton' to="/">Back</Link>
       <div id="watchlistcontainer">
         <WatchlistContainer key={watchlistKey} watchlists={watchlists} userCoins={userCoins} items={items} handleDeleteWatchlist={handleDeleteWatchlist} />
       </div>

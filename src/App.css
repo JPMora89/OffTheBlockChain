@@ -22,7 +22,7 @@
   top: 0;
   margin-left: -8%;
   margin-top: -8%;
-  animation: glow 0.8s ease-in-out infinite alternate;
+  animation: glow 1.3s ease-in-out infinite alternate;
 }
 
 @keyframes glow {

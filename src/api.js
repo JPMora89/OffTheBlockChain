@@ -35,7 +35,6 @@ class OtbcApi {
 static setupInterceptors() {
     axios.interceptors.request.use(
       (config) => {
-        // Check if the token is available and set it in the headers
         if (OtbcApi.token) {
           config.headers["Authorization"] = `Bearer ${OtbcApi.token}`;
         }
