@@ -27,10 +27,11 @@ const KnowledgeHardCode = () => {
         alt="blockchainTransformed"
         id="blockchainTransformed"
       />
-
+<div id="glossaryContainer">
       <Link id="glossaryButton" to="/glossary">
         Glossary
       </Link>
+      </div>
       {/* <img src={blockchain} className="headerImage"></img> */}
 
       {/* <h1 id="knowledgeHeader">Knowledge</h1> */}

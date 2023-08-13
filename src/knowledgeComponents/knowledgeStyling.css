@@ -115,7 +115,7 @@
   display: inline-block;
   /* vertical-align: top; */
     color: white;
-    margin-top: 16%;
+    margin-top: 11%;
     margin-left: 10%;
     margin-right: 5%;
     padding: 10px;
@@ -133,7 +133,7 @@
   display: inline-block;
   vertical-align: top;
     color: white;
-    margin-top: 16%;
+    margin-top: 11%;
     margin-right: 5%;
     /* margin-left: -10%; */
     padding: 10px;
@@ -261,7 +261,7 @@ h1 {
   color: white;
 }
 
-#glossaryButton {
+/* #glossaryButton {
   border: 2px solid #ff5f1f;
   color: white;
   background: transparent;
@@ -281,4 +281,28 @@ h1 {
   background: #ff5f1f;
   color: white;
   z-index: 999;
+} */
+
+#glossaryContainer {
+  position: relative;
+  margin-top: 5%; /* Adjust as needed */
+  margin-left: 5%; /* Adjust to control the button's horizontal position */
+}
+
+#glossaryButton {
+  position: absolute;
+  top: 0;
+  /* left: 0;  */
+  border: 2px solid #ff5f1f;
+  color: white;
+  background: transparent;
+  border-radius: 5px;
+  z-index: 2; /* Increase z-index */
+  padding: 5px 10px;
+  margin-left: 22%;
+}
+
+#glossaryButton:hover {
+  background: #ff5f1f;
+  color: white;
 }
