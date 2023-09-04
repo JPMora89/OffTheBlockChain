@@ -66,10 +66,11 @@ function SignupForm({register}) {
           <Form.Control
             name="password"
             id="password"
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={handleChange}
             value={formData.password}
+            minLength="8" required
           />
           <Button id='SignupFormButton' type="submit">Sign Up</Button>
         </Form>

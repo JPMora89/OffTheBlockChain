@@ -46,9 +46,10 @@ const LatestNews = () => {
 
   return (
     <div className="latest-news">
-      <h1 id="latestnewheader">Latest News</h1>
+      {/* <h1 id="latestnewheader">Latest News</h1> */}
+      <a href="https://cryptopanic.com/" target="_blank" data-news_feed="recent" data-text_color="#333333" data-header_text_color="#FFFFFF" data-link_color="#FF5F1F" data-bg_color="#070C32" data-posts_limit="10" data-font_size="15" data-header_bg_color="#FF5F1F" class="CryptoPanicWidget">Off The BlockChain: Latest News</a>
 
-      <Carousel
+      {/* <Carousel
         selectedItem={currentIndex}
         showThumbs={false}
         showStatus={false}
@@ -73,17 +74,19 @@ const LatestNews = () => {
             </div>
           </div>
         ))}
-      </Carousel>
-      <div className="carousel-navigation">
+      </Carousel> */}
+      <Helmet><script src="https://static.cryptopanic.com/static/js/widgets.min.js"></script></Helmet>
+      {/* <div className="carousel-navigation">
         <button onClick={handlePrevSlide}>&#8592; Prev</button>
         <button onClick={handleNextSlide}>Next &#8594;</button>
-      </div>
-      <Helmet>
-        {/* <img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" /> */}
-        {/* <script src="https://www.cryptohopper.com/widgets/js/script"></script> */}
-      </Helmet>
+      </div> */}
+
+
     </div>
   );
 };
 
 export default LatestNews;
+
+
+

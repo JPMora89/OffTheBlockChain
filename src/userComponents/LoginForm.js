@@ -37,6 +37,7 @@ function LoginForm({login}) {
             placeholder="Password"
             onChange={handleChange}
             value={formData.password}
+            minlength="8" required
           />
           <Button id='LoginFormButton' type="submit">Login</Button>
         </Form>
