@@ -50,6 +50,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./coinDetail.css"
+import OtbcApi from "../api";
 
 const CoinNews = ({ coinId }) => {
   const [news, setNews] = useState([]);
