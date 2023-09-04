@@ -4,7 +4,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
 }
 
 #SignupFormHeader {
@@ -14,8 +14,51 @@
     font-weight: lighter;
 }   
 
-#SignupFormButton {
+/* #SignupFormButton {
     justify-content: center;
     text-align: center;
     margin-left: 46%;
+} */
+#SignupFormButton {
+    /* position: absolute; */
+    top: 0;
+    /* left: 0;  */
+    border: 2px solid #ff5f1f;
+    color: white;
+    background: transparent;
+    border-radius: 5px;
+    z-index: 2; /* Increase z-index */
+    padding: 5px 10px;
+    margin-left: 45%;
+    margin-top: 3%;
+  }
+  
+  #SignupFormButton:hover {
+    background: #ff5f1f;
+    color: white;
+  }
+
+#SignupForm::placeholder {
+  color: #FF5F1F; 
 }
+
+#firstName::placeholder {
+    color: #FF5F1F;
+}
+
+#lastName::placeholder {
+    color: #FF5F1F;
+}
+
+#email::placeholder {
+    color: #FF5F1F;
+}
+
+#password::placeholder {
+    color: #FF5F1F;
+}
+
+#confirmPassword::placeholder {
+    color: #FF5F1F;
+}
+

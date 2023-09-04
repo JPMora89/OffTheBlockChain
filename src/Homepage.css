@@ -153,11 +153,13 @@
 }
 
 #homeanonparagraph {
-  margin-left: 20%;
+  /* margin-left: 20%; */
+  margin-top: 3%;
 }
 
+
 #signupbutton {
-  margin-left: 10%;
+  /* margin-left: 10%; */
   color: white;
   background-color: #FF5F1F;
   
@@ -172,7 +174,7 @@
 }
 
 #loginbutton {
-  /* margin-left: 10%; */
+  /* margin-left: 55%; */
   color: white;
   background-color: #FF5F1F;
   
@@ -190,6 +192,7 @@
   /* font-size: 50px; */
   margin-right: 10%;
   z-index: 999;
+  margin-top: 10%;
 
   color: #ff5f1f;
 
@@ -209,3 +212,7 @@
     text-shadow: 0 0 30px #34b3c1, 0 0 10px #a3246a;
   }
 }
+
+/* #homeanonparagraph {
+  margin-left: -10%;
+} */

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6c67227b.css",
+    "main.js": "/static/js/main.847e3297.js",
+    "static/js/787.9abf3d5e.chunk.js": "/static/js/787.9abf3d5e.chunk.js",
+    "static/media/purpleearth.jpg": "/static/media/purpleearth.e7b6913ebe990467f279.jpg",
+    "static/media/blockchainTransformed.png": "/static/media/blockchainTransformed.4b36ef5180b086a94f73.png",
+    "static/media/blockchainLink.png": "/static/media/blockchainLink.570ede9ad848499994cc.png",
+    "static/media/blockchainLinkSmall.png": "/static/media/blockchainLinkSmall.d584db992b8d7b97fca3.png",
+    "static/media/defitransformed.png": "/static/media/defitransformed.af23b4dfa9c69c82ad78.png",
+    "static/media/blockchain.jpg": "/static/media/blockchain.330f9edb7d216016a1bf.jpg",
+    "static/media/bitcointransformed.png": "/static/media/bitcointransformed.ff189299fad19b246d83.png",
+    "static/media/cryptocoins.png": "/static/media/cryptocoins.486c39b5ddc7b753ed7c.png",
+    "static/media/cryptocurrencytransformed.png": "/static/media/cryptocurrencytransformed.77be7404eedc0147aea0.png",
+    "static/media/dApps.png": "/static/media/dApps.7fb1f186d8adcddfab40.png",
+    "static/media/defi.webp": "/static/media/defi.b8c8961bb07333a8c364.webp",
+    "index.html": "/index.html",
+    "main.6c67227b.css.map": "/static/css/main.6c67227b.css.map",
+    "main.847e3297.js.map": "/static/js/main.847e3297.js.map",
+    "787.9abf3d5e.chunk.js.map": "/static/js/787.9abf3d5e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c67227b.css",
+    "static/js/main.847e3297.js"
+  ]
+}

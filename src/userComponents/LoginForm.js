@@ -22,16 +22,16 @@ function LoginForm({login}) {
   }
     return (
       <>
-        <h1 id='LoginFormHeader' style={{color: 'white'}}>Login</h1>
+        <h1 id='LoginFormHeader' >Login</h1>
         <Form id='LoginForm' onSubmit={handleSubmit}>
-          <Form.Control
+          <Form.Control id='LoginFormUsername'
             name="username"
             type="text"
             placeholder="Username"
             onChange={handleChange}
             value={formData.username}
           />
-          <Form.Control
+          <Form.Control id='LoginFormPassword'
             name="password"
             type="password"
             placeholder="Password"

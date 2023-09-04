@@ -4,7 +4,8 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
+    color: #FF5F1F;
 }
 
 #LoginFormHeader {
@@ -14,8 +15,34 @@
     font-weight: lighter;
 }   
 
-#LoginFormButton {
+/* #LoginFormButton {
     justify-content: center;
     text-align: center;
     margin-left: 46%;
+} */
+
+#LoginFormButton {
+    /* position: absolute; */
+    top: 0;
+    /* left: 0;  */
+    border: 2px solid #ff5f1f;
+    color: white;
+    background: transparent;
+    border-radius: 5px;
+    z-index: 2; /* Increase z-index */
+    padding: 5px 10px;
+    margin-left: 45%;
+    margin-top: 3%;
+ 
+  }
+  
+  #LoginFormButton:hover {
+    background: #ff5f1f;
+    color: white;
+  }
+
+#LoginFormUsername::placeholder,
+#LoginFormPassword::placeholder {
+  color: #FF5F1F; 
 }
+
