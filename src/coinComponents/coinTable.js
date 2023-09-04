@@ -157,14 +157,14 @@ const CoinTable = () => {
           ></script>
           {/* <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>  */}
         </Helmet>
-        {/* <coingecko-coin-price-marquee-widget
+        <coingecko-coin-price-marquee-widget
           id="coinmarquee"
           coin-ids="bitcoin,ethereum,ripple,matic-network,solana,dogecoin,tether,usd-coin,cosmos"
           currency="usd"
           background-color="#070c32"
           locale="en"
           font-color="#ffffff"
-        ></coingecko-coin-price-marquee-widget> */}
+        ></coingecko-coin-price-marquee-widget>
       </div>
       <span className="livecoinwatch-widgets">
         <div

@@ -55,6 +55,7 @@ import OtbcApi from "../api";
 const CoinNews = ({ coinId }) => {
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [coinSymbol, setCoinSymbol] = useState("");
 
   // useEffect(() => {
   //   const fetchCoinNews = async () => {
@@ -75,13 +76,40 @@ const CoinNews = ({ coinId }) => {
   //   useEffect(() => {
   //     fetchCoinNews(); // Call the function to fetch coin news
   //   }, [coinId]);
+
+// const getCoinSymbol = async () => {
+  
+//     const response = await OtbcApi.getCoin(coinId)
+//     console.log(response)
+//     const coinSymbol = response.symbol
+//     console.log(coinSymbol)
+//     return coinSymbol
+  
+// }
+// getCoinSymbol()
+const getCoinSymbol = async () => {
+  try {
+    const response = await OtbcApi.getCoin(coinId);
+    const coinSymbol = response.symbol;
+    setCoinSymbol(coinSymbol);
+  } catch (error) {
+    console.error("Error fetching coin symbol:", error);
+  }
+};
+
+useEffect(() => {
+  getCoinSymbol(); // Call the function to get the coin symbol
+}, [coinId]);
+
+
   const fetchCoinNews = async () => {
     if (!coinId) {
       return; // Don't make a request if coinId is not defined
     }
 
     try {
-      const coinNews = await OtbcApi.getCoinNews(coinId);
+      const coinNews = await OtbcApi.getCoinNews(coinSymbol);
+      console.log(coinNews)
       setNews(coinNews);
       setIsLoading(false);
     } catch (error) {
@@ -89,6 +117,8 @@ const CoinNews = ({ coinId }) => {
       setIsLoading(false);
     }
   };
+
+
 
   useEffect(() => {
     fetchCoinNews(); // Call the function to fetch coin news

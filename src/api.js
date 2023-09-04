@@ -251,9 +251,9 @@ static setupInterceptors() {
   }
 
   // News API call to the backend to avoid CORS issue
-  static async getCoinNews(coinId) {
+  static async getCoinNews(coinSymbol) {
     try {
-      const response = await axios.get(`${BASE_URL}/coins/news/${coinId}`);
+      const response = await axios.get(`${BASE_URL}/coins/news/${coinSymbol}`);
       return response.data.news;
     } catch (error) {
       console.error("Error fetching coin news:", error);
