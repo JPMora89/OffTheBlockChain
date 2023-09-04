@@ -63,7 +63,7 @@ const CoinNews = ({ coinId }) => {
 
       try {
         const response = await axios.get(
-          `https://cryptopanic.com/api/v1/posts/?auth_token=12a2442613bd9a59f7b47b9c8da4001642d3b126&public=true&currencies=${coinId}`
+          `https://cors-anywhere.herokuapp.com/https://cryptopanic.com/api/v1/posts/?auth_token=12a2442613bd9a59f7b47b9c8da4001642d3b126&public=true&currencies=${coinId}`
         );
         setNews(response.data.results);
         setIsLoading(false);
