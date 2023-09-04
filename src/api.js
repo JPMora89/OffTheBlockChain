@@ -249,6 +249,18 @@ static setupInterceptors() {
 
     return res;
   }
+
+  // News API call to the backend to avoid CORS issue
+  static async getCoinNews(coinId) {
+    try {
+      const response = await axios.get(`${BASE_URL}/coins/news/${coinId}`);
+      return response.data.news;
+    } catch (error) {
+      console.error("Error fetching coin news:", error);
+      throw error;
+    }
+  }
+
 }
 
 export default OtbcApi;

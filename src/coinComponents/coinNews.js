@@ -55,26 +55,57 @@ const CoinNews = ({ coinId }) => {
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // useEffect(() => {
+  //   const fetchCoinNews = async () => {
+  //     if (!coinId) {
+  //       return; // Don't make a request if coinId is not defined
+  //     }
+
+  //     try {
+  //       const coinNews = await OtbcApi.getCoinNews(coinId);
+  //       setNews(coinNews);
+  //       setIsLoading(false);
+  //     } catch (error) {
+  //       console.error("Error fetching coin news:", error);
+  //       setIsLoading(false);
+  //     }
+  //   };
+  
+  //   useEffect(() => {
+  //     fetchCoinNews(); // Call the function to fetch coin news
+  //   }, [coinId]);
+  const fetchCoinNews = async () => {
+    if (!coinId) {
+      return; // Don't make a request if coinId is not defined
+    }
+
+    try {
+      const coinNews = await OtbcApi.getCoinNews(coinId);
+      setNews(coinNews);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching coin news:", error);
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchCoinNews = async () => {
-      if (!coinId) {
-        return; // Don't make a request if coinId is not defined
-      }
-
-      try {
-        const response = await axios.get(
-          `https://cors-anywhere.herokuapp.com/ https://cryptopanic.com/api/v1/posts/?auth_token=12a2442613bd9a59f7b47b9c8da4001642d3b126&public=true&currencies=${coinId}`
-        );
-        setNews(response.data.results);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching coin news:", error);
-        setIsLoading(false);
-      }
-    };
-
-    fetchCoinNews();
+    fetchCoinNews(); // Call the function to fetch coin news
   }, [coinId]);
+  //     try {
+  //       const response = await axios.get(
+  //         `https://cors-anywhere.herokuapp.com/ https://cryptopanic.com/api/v1/posts/?auth_token=12a2442613bd9a59f7b47b9c8da4001642d3b126&public=true&currencies=${coinId}`
+  //       );
+  //       setNews(response.data.results);
+  //       setIsLoading(false);
+  //     } catch (error) {
+  //       console.error("Error fetching coin news:", error);
+  //       setIsLoading(false);
+  //     }
+  //   };
+
+  //   fetchCoinNews();
+  // }, [coinId]);
 
   return (
     <div className="coinNews">
