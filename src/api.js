@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-REACT_APP_BASE_URL = "https://otbc-backend.onrender.com"
+const REACT_APP_BASE_URL = "https://otbc-backend.onrender.com"
 const BASE_URL = REACT_APP_BASE_URL || "http://localhost:3001";
 
 
