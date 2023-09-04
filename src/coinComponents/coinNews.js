@@ -103,7 +103,7 @@ useEffect(() => {
 
 
   const fetchCoinNews = async () => {
-    if (!coinId) {
+    if (!coinSymbol) {
       return; // Don't make a request if coinId is not defined
     }
 
@@ -122,7 +122,7 @@ useEffect(() => {
 
   useEffect(() => {
     fetchCoinNews(); // Call the function to fetch coin news
-  }, [coinId]);
+  }, [coinSymbol]);
   //     try {
   //       const response = await axios.get(
   //         `https://cors-anywhere.herokuapp.com/ https://cryptopanic.com/api/v1/posts/?auth_token=12a2442613bd9a59f7b47b9c8da4001642d3b126&public=true&currencies=${coinId}`
