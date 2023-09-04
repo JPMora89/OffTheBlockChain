@@ -87,13 +87,66 @@ const CoinNews = ({ coinId }) => {
   
 // }
 // getCoinSymbol()
+// const getCoinSymbol = async () => {
+//   try {
+//     const response = await OtbcApi.getCoin(coinId);
+//     const coinSymbol = response.symbol;
+//     setCoinSymbol(coinSymbol);
+//   } catch (error) {
+//     console.error("Error fetching coin symbol:", error);
+//   }
+// };
+
+// useEffect(() => {
+//   getCoinSymbol(); // Call the function to get the coin symbol
+// }, [coinId]);
+
+
+//   const fetchCoinNews = async () => {
+//     if (!coinSymbol) {
+//       return; // Don't make a request if coinId is not defined
+//     }
+
+//     try {
+//       const coinNews = await OtbcApi.getCoinNews(coinSymbol);
+//       console.log(coinNews)
+//       setNews(coinNews);
+//       setIsLoading(false);
+//     } catch (error) {
+//       console.error("Error fetching coin news:", error);
+//       setIsLoading(false);
+//     }
+//   };
+
+
+
+//   useEffect(() => {
+//     fetchCoinNews(); // Call the function to fetch coin news
+//   }, [coinSymbol]);
+
 const getCoinSymbol = async () => {
   try {
     const response = await OtbcApi.getCoin(coinId);
     const coinSymbol = response.symbol;
-    setCoinSymbol(coinSymbol);
+    setCoinSymbol(coinSymbol); // Update coinSymbol state
   } catch (error) {
     console.error("Error fetching coin symbol:", error);
+  }
+};
+
+// Define a function to fetch coin news using OtbcApi
+const fetchCoinNews = async () => {
+  if (!coinSymbol) {
+    return; // Don't make a request if coinSymbol is not defined
+  }
+
+  try {
+    const coinNews = await OtbcApi.getCoinNews(coinSymbol);
+    setNews(coinNews);
+    setIsLoading(false);
+  } catch (error) {
+    console.error("Error fetching coin news:", error);
+    setIsLoading(false);
   }
 };
 
@@ -101,28 +154,10 @@ useEffect(() => {
   getCoinSymbol(); // Call the function to get the coin symbol
 }, [coinId]);
 
+useEffect(() => {
+  fetchCoinNews(); // Call the function to fetch coin news when coinSymbol changes
+}, [coinSymbol]);
 
-  const fetchCoinNews = async () => {
-    if (!coinSymbol) {
-      return; // Don't make a request if coinId is not defined
-    }
-
-    try {
-      const coinNews = await OtbcApi.getCoinNews(coinSymbol);
-      console.log(coinNews)
-      setNews(coinNews);
-      setIsLoading(false);
-    } catch (error) {
-      console.error("Error fetching coin news:", error);
-      setIsLoading(false);
-    }
-  };
-
-
-
-  useEffect(() => {
-    fetchCoinNews(); // Call the function to fetch coin news
-  }, [coinSymbol]);
   //     try {
   //       const response = await axios.get(
   //         `https://cors-anywhere.herokuapp.com/ https://cryptopanic.com/api/v1/posts/?auth_token=12a2442613bd9a59f7b47b9c8da4001642d3b126&public=true&currencies=${coinId}`
