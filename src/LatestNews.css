@@ -162,4 +162,8 @@
   .carousel-navigation button:hover {
     text-decoration: underline;
   }
+
+  .CryptoPanicWidget-header {
+    color: green;
+  }
   
