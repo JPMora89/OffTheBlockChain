@@ -37,7 +37,7 @@ margin-bottom: 7%;
 
 #coinnewsheader {
     animation: glow 0.8s ease-in-out infinite alternate;
-    max-width: 300px;
+    max-width: 15%;
 
 }
 
@@ -45,7 +45,7 @@ margin-bottom: 7%;
 #coinMarketDataHeader {
     color: red;
     animation: glow 0.8s ease-in-out infinite alternate;
-    max-width: 20%;
+    max-width: 15%;
 
 }
 
