@@ -58,9 +58,6 @@ margin-bottom: 7%;
     }
   }
 
-/* #backtocointablebutton {
-    color: #FF5F1F;
-} */
 
 #backtocointablebutton {
     color: #ff5f1f;
@@ -75,18 +72,12 @@ margin-bottom: 7%;
 
 
 #addtowatchlistheader {
-    /* text-align: end; */
     margin-bottom: -4%;
-    /* margin-right: 10%; */
     text-align: center;
     margin-top: 5%;
   
 }
-/* 
-#addtowatchlistbutton {
- text-align: end;
 
-} */
 
 #addtowatchlistbutton:hover {
     background-color: white;
@@ -94,7 +85,6 @@ margin-bottom: 7%;
 
 #watchlistSelect {
     margin-right: 5%;
-    /* margin-bottom: 10%; */
 
 
     
@@ -104,9 +94,7 @@ margin-bottom: 7%;
     text-align: center;
 }
 
-/* #addtowatchlistDiv {
-    right: 0;
-    margin-right: -30%;
-    display: flex;
-    justify-content: flex-end;
-} */
+
+#newsarticle {
+    color: #ff5f1f;
+}

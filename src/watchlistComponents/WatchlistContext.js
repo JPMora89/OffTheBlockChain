@@ -22,9 +22,7 @@ export const WatchlistProvider = ({ children }) => {
 
 
   
-  // Update the context value when watchlists state changes
   useEffect(() => {
-    // The watchlists value will be updated here whenever it changes.
   }, [watchlists]);
 
   const addToWatchlist = async (coinId, selectedWatchlist) => {

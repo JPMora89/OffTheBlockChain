@@ -5,37 +5,6 @@ import purpleearth from "./assets/images/purpleearth.jpg";
 // import "./HomeAnon.css";
 
 
-// function HomeAnon() {
-//   return (
-//     <>
-//       <h1 id="homeanonparagraphheader">Get Started</h1>
-//       <div id="HomepageAnonButtons">
-
-//         {/* <Link to="/signup" className="styled-link">
-//           Sign Up
-//         </Link> */}
-
-//         <Link
-//           id="loginbutton"
-//           className="home-button btn btn-primary font-weight-bold mr-3"
-//           to="/login"
-//         >
-//           Log in
-//         </Link>
-//         <Link
-//           id="signupbutton"
-//           className="home-button btn btn-primary font-weight-bold"
-//           to="/signup"
-//         >
-//           Sign Up
-//         </Link>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default HomeAnon;
-
 
 
 const Homepage = () => {

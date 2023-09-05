@@ -46,40 +46,11 @@ const LatestNews = () => {
 
   return (
     <div className="latest-news">
-      {/* <h1 id="latestnewheader">Latest News</h1> */}
       <a href="https://cryptopanic.com/" target="_blank" data-news_feed="recent" data-text_color="#333333" data-header_text_color="#FFFFFF" data-link_color="#FF5F1F" data-bg_color="#070C32" data-posts_limit="10" data-font_size="15" data-header_bg_color="#FF5F1F" class="CryptoPanicWidget">Off The BlockChain: Latest News</a>
 
-      {/* <Carousel
-        selectedItem={currentIndex}
-        showThumbs={false}
-        showStatus={false}
-        showIndicators={false}
-        infiniteLoop
-      >
-        {articles.map((article) => (
-          <div key={article.publishedAt} className="carousel-slide">
-            {article.urlToImage && (
-              <img src={article.urlToImage} alt={article.title} />
-            )}
-            <div className="article-details">
-              <h3>{article.title}</h3>
-              {article.author && <p>Author: {article.author}</p>}
-              {article.source.name && <p>Source: {article.source.name}</p>}
-              {article.publishedAt && (
-                <p>Published: {formatDateTime(article.publishedAt)}</p>
-              )}
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                Read more
-              </a>
-            </div>
-          </div>
-        ))}
-      </Carousel> */}
+
       <Helmet><script src="https://static.cryptopanic.com/static/js/widgets.min.js"></script></Helmet>
-      {/* <div className="carousel-navigation">
-        <button onClick={handlePrevSlide}>&#8592; Prev</button>
-        <button onClick={handleNextSlide}>Next &#8594;</button>
-      </div> */}
+
 
 
     </div>
