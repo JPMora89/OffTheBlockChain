@@ -180,7 +180,7 @@
 
   text-transform: uppercase;
 
-  animation: glow 1.3s ease-in-out infinite alternate;
+  /* animation: glow 1.3s ease-in-out infinite alternate; */
 }
 
 @keyframes glow {
