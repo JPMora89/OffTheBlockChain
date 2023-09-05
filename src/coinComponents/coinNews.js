@@ -50,10 +50,10 @@ useEffect(() => {
       {isLoading ? (
         <p>Loading news...</p>
       ) : (
-        <ul>
+        <ul id="newslist">
           {news.slice(0, 5).map((article) => (
             <li id="newsarticle" key={article.id}>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
+              <a id="news" href={article.url} target="_blank" rel="noopener noreferrer">
                 {article.title}
               </a>
             </li>
