@@ -16,9 +16,9 @@ const CoinTable = () => {
   const [selectedCoinId, setSelectedCoinId] = useState(null);
   const [selectedCoinName, setSelectedCoinName] = useState("");
   const [watchlists, setWatchlists] = useState([]);
-  const [newWatchlistName, setNewWatchlistName] = useState("");
   const [selectedWatchlist, setSelectedWatchlist] = useState("");
   const [trendingCoins, setTrendingCoins] = useState([]);
+  const [watchlistItems, setWatchlistItems] = useState([]);
 
   useEffect(() => {
     const fetchAllWatchlists = async () => {
@@ -33,17 +33,17 @@ const CoinTable = () => {
     fetchAllWatchlists();
   }, []);
 
-  const addCoinstoDB = async () => {
-    try {
-      const response = await OtbcApi.addAllCoinstoDB();
-    } catch (error) {
-      console.error("Error adding coins to DB:", error);
-    }
-  };
+  // const addCoinstoDB = async () => {
+  //   try {
+  //     const response = await OtbcApi.addAllCoinstoDB();
+  //   } catch (error) {
+  //     console.error("Error adding coins to DB:", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    addCoinstoDB();
-  }, []);
+  // useEffect(() => {
+  //   addCoinstoDB();
+  // }, []);
 
   useEffect(() => {
     const fetchTrendingCoins = async () => {
@@ -84,8 +84,9 @@ const CoinTable = () => {
             ? { ...watchlist, coins: [...watchlist.coins, coinId] }
             : watchlist
         );
+        console.log("These are the coins",coinId)
+        console.log(updatedWatchlists)
         alert("Coin added to watchlist");
-        console.log(watchlists + "watchlists");
         setWatchlists(updatedWatchlists);
       } catch (error) {
         console.error("Error adding coin to watchlist:", error);
@@ -93,35 +94,36 @@ const CoinTable = () => {
     }
   };
 
-  const [watchlistItems, setWatchlistItems] = useState([]);
   console.log("Watchlists received:", watchlists);
 
-  let watchlistids = watchlists.map((watchlist) => {
-    return watchlist.watchlist_id;
-  });
+  // let watchlistids = watchlists.map((watchlist) => {
+  //   return watchlist.watchlist_id;
+  // });
 
-  useEffect(() => {
-    const fetchWatchlistItems = async () => {
-      try {
-        const items = [];
-        for (const watchlistId of watchlistids) {
-          const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
-          items.push(...watchlistItems);
-          console.log("Watchlist items:", watchlistItems);
-          console.log(watchlistId);
-        }
-        setWatchlistItems(items);
-      } catch (error) {
-        console.error("Error fetching watchlist items:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchWatchlistItems = async () => {
+  //     try {
+  //       const items = [];
+  //       for (const watchlistId of watchlistids) {
+  //         const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
+  //         items.push(...watchlistItems);
+  //         console.log("Watchlist items:", watchlistItems);
+  //         console.log(watchlistId);
+  //       }
+  //       setWatchlistItems(items);
+  //       console.log(watchlistItems)
+  //       console.log(items)
+  //     } catch (error) {
+  //       console.error("Error fetching watchlist items:", error);
+  //     }
+  //   };
 
-    fetchWatchlistItems();
-  }, []);
+  //   fetchWatchlistItems();
+  // }, []);
 
-  useEffect(() => {
-    console.log(selectedCoinId);
-  }, [selectedCoinId]);
+  // useEffect(() => {
+  //   console.log(selectedCoinId);
+  // }, [selectedCoinId]);
 
   const handleWatchlistChange = (event) => {
     const selectedName = event.target.value;
@@ -315,7 +317,7 @@ const CoinTable = () => {
           alt="bitcointransformed"
           id="bitcointransformed"
         />
-        <h2>Trending Coins</h2>
+        <h2 id="trendingcoinsheader">Trending Coins</h2>
         {isLoading ? (
           <p>Loading...</p>
         ) : (

@@ -1,8 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import OtbcApi from "../api";
+import { Link } from "react-router-dom";
+import "./watchlist.css"
 
 const Watchlist = ({ watchlist, handleDeleteWatchlist }) => {
   const [items, setItems] = useState([]);
+
+
 
   const fetchWatchlistItems = async () => {
     try {
@@ -10,6 +14,8 @@ const Watchlist = ({ watchlist, handleDeleteWatchlist }) => {
         watchlist.watchlist_id
       );
       setItems(watchlistItems);
+      console.log("logging items here:", watchlistItems)
+      console.log(items)
     } catch (error) {
       console.error("Error fetching watchlist items:", error);
     }
@@ -17,9 +23,8 @@ const Watchlist = ({ watchlist, handleDeleteWatchlist }) => {
 
   useEffect(() => {
     fetchWatchlistItems();
-  }, []);
+  }, [watchlist.watchlist_id]);
 
-  const watchlistItem = items.map((item) => item.name);
 
   const removeFromWatchlist = useCallback(
     async (coinId) => {
@@ -33,7 +38,6 @@ const Watchlist = ({ watchlist, handleDeleteWatchlist }) => {
     },
     [watchlist.watchlist_id]
   );
-
   return (
     <div id="watchlistbox">
       <h2 id="watchlistname">{watchlist.name}</h2>
@@ -43,14 +47,21 @@ const Watchlist = ({ watchlist, handleDeleteWatchlist }) => {
         <ul>
           {items.map((item) => {
             return (
-              <li id="watchlistcoinname" key={item.coin_id}>
-                {item.name} ({item.symbol.toUpperCase()})
+              <li id="watchlistcoinname" key={item.coin_id}>   <Link id="coinLinkWatchlist"
+                        to={`/coin/${item.coin_id}`}
+                        
+                        // className="coin-link"
+                      >
+                        {item.name}
+                      </Link>
+                 ({item.symbol.toUpperCase()})       ${item.price}
                 <button
                   id="removefromwatchlistbutton"
                   onClick={() => removeFromWatchlist(item.name)}
                 >
                   Remove
                 </button>
+
               </li>
             );
           })}

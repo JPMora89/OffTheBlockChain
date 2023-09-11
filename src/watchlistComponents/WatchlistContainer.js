@@ -10,6 +10,7 @@ const WatchlistContainer = ({
   userCoins,
   removeFromWatchlist,
   handleDeleteWatchlist,
+  items
 }) => {
   const [watchlistItems, setWatchlistItems] = useState([]);
   console.log("Watchlists received:", watchlists);
@@ -18,26 +19,26 @@ const WatchlistContainer = ({
     return watchlist.watchlist_id;
   });
 
-  useEffect(() => {
-    const fetchWatchlistItems = async () => {
-      try {
-        const items = [];
-        for (const watchlistId of watchlistids) {
-          const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
-          items.push(...watchlistItems);
-          console.log("Watchlist items:", watchlistItems);
-        }
-        setWatchlistItems(items);
-        console.log("Watchlist items:", items);
-      } catch (error) {
-        console.error("Error fetching watchlist items:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchWatchlistItems = async () => {
+  //     console.log("This function is being called")
+  //     try {
+  //       const items = [];
+  //       for (const watchlistId of watchlistids) {
+  //         const watchlistItems = await OtbcApi.getWatchlistItems(watchlistId);
+  //         items.push(...watchlistItems);
+  //         console.log("Watchlist items:", watchlistItems, items);
+  //       }
+  //       setWatchlistItems(items);
+  //       console.log("Watchlist items:", items);
+  //     } catch (error) {
+  //       console.error("Error fetching watchlist items:", error);
+  //     }
+  //   };
 
-    fetchWatchlistItems();
-  }, []);
-  console.log("Watchlist items:", watchlistItems);
-  console.log("Watchlists:", watchlists);
+  //   fetchWatchlistItems();
+  // }, [items]);
+console.log("items", items)
 
   return (
     <div className="watchlist-container">

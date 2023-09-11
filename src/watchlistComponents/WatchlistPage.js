@@ -13,12 +13,14 @@ const WatchlistPage = (items) => {
   const [userCoins, setUserCoins] = useState([]);
   const [watchlistKey, setWatchlistKey] = useState(0);
 
+  console.log(items)
+
   useEffect(() => {
     const fetchWatchlists = async () => {
+      console.log("This function is being called")
       try {
         const watchlistsData = await OtbcApi.getAllWatchlists();
         setWatchlists(watchlistsData);
-        console.log("Fetched watchlists:", watchlistsData);
       } catch (error) {
         console.error("Error fetching watchlists:", error);
       }
@@ -44,7 +46,6 @@ const WatchlistPage = (items) => {
     setWatchlists(updatedWatchlists);
   };
 
-  console.log("Items prop:", items);
 
   return (
     <div>
@@ -52,7 +53,7 @@ const WatchlistPage = (items) => {
       <img src={BlockchainLink} alt="blockchainLink" id="blockchainLink" />
       <h1 id="watchlistpageheader">Watchlists</h1>
       <CreateWatchlist updateWatchlist={updateWatchlists} />{" "}
-      <Link id="backtocoinsbutton" to="/">
+      <Link id="backtocoinsbutton" to="/cointable">
         Back
       </Link>
       <div id="watchlistcontainer">
@@ -62,6 +63,7 @@ const WatchlistPage = (items) => {
           userCoins={userCoins}
           items={items}
           handleDeleteWatchlist={handleDeleteWatchlist}
+          className ="watchlistbox"
         />
       </div>
     </div>

@@ -16,17 +16,36 @@
     font-size: 100px;
   }
   
+  /* #watchlistcontainer {
+    margin-bottom: 20%;
+    margin-right: 10%;
+  } */
+  
   #watchlistcontainer {
     margin-bottom: 20%;
     margin-right: 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    margin-left: 20%;
   }
   
-  #backtocoinsbutton {
-    color: #FF5F1F;
+  .watchlistbox {
+
+    flex-basis: calc(33.33% - 20px); 
+    margin-right: 20px; 
+    margin-bottom: 20px; 
+    box-sizing: border-box; 
+    /* margin-top: 10%; */
   }
+  
+
+  /* #backtocoinsbutton {
+    color: #FF5F1F;
+  } */
   
   #backtocoinsbutton {
     color: #ff5f1f;
+    max-width: 5%;
   }
   #backtocoinsbutton:hover {
     color: white;
