@@ -5,6 +5,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Images
 
 ![Screenshot 2023-09-04 at 21-51-37 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/c341bd00-a6e7-4bd4-9e20-c71c6ef85d0a)
+![Screenshot 2023-09-15 at 23-02-51 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/e6cd959f-cca7-4cd7-9f06-01a0cb9281aa)
+![Screenshot 2023-09-15 at 23-03-49 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/4f01ff34-2793-415d-b317-3f5a90f72aa4)
+![Screenshot 2023-09-15 at 23-04-26 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/3fbe435c-1c30-4b3c-ba13-5243b139b470)
+
+
+
 
 
 
