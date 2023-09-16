@@ -20,7 +20,6 @@ describe('KnowledgeComponent', () => {
       />
     );
 
-    // Assert that the title and paragraphs are rendered
     expect(screen.getByText(sampleData.title)).toBeInTheDocument();
     expect(screen.getByText('Sample content')).toBeInTheDocument();
     expect(screen.getByText('Another paragraph')).toBeInTheDocument();
@@ -36,7 +35,6 @@ describe('KnowledgeComponent', () => {
       />
     );
 
-    // Assert that the title is rendered, but content is not
     expect(screen.getByText(sampleData.title)).toBeInTheDocument();
     expect(screen.queryByText('Sample content')).not.toBeInTheDocument();
   });
@@ -51,7 +49,6 @@ describe('KnowledgeComponent', () => {
       />
     );
 
-    // Assert that the component has a unique ID based on topicId
     expect(screen.getByTestId('topic-1')).toBeInTheDocument();
   });
 });

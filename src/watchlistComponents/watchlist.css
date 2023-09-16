@@ -42,7 +42,6 @@
 #watchlistcoinname {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid #ff5f1f; */
   margin-bottom: 10%;
 }
 
@@ -60,18 +59,6 @@
   right: 0;
 }
 
-/* #coinLinkWatchlist {
-  justify-content: center;
-  margin-right: 5%;
-  border: 1px solid #ff5f1f;
-  color: #ff5f1f;
-  padding: 5px;
-  
-}
-
-#coinLinkWatchlist :hover {
-
-} */
 
 #coinLinkWatchlist {
   display: inline-block; 
@@ -82,10 +69,8 @@
   align-items: center;
   align-content: center;
   justify-items: center;
-  /* margin-top: 5%; */
   color: white;
   margin-right: 10%;
-  /* margin: 5%; */
   
 }
 #coinLinkWatchlist:hover {

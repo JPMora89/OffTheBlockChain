@@ -3,15 +3,13 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import Watchlist from "./Watchlist";
 import OtbcApi from "../api";
 
-jest.mock("../api"); // Mock the API module
+jest.mock("../api"); 
 
-// Mock the watchlist data
 const mockWatchlist = {
   watchlist_id: 1,
   name: "My Watchlist",
 };
 
-// Mock the watchlist items data
 const mockWatchlistItems = [
   {
     coin_id: 1,
@@ -27,7 +25,6 @@ const mockWatchlistItems = [
   },
 ];
 
-// Mock the handleDeleteWatchlist function
 const mockHandleDeleteWatchlist = jest.fn();
 
 beforeEach(() => {
@@ -55,7 +52,6 @@ test("fetches and displays watchlist items", async () => {
     />
   );
 
-  // Wait for the watchlist items to be fetched and displayed
   await waitFor(() => {
     const bitcoinName = screen.getByText("Bitcoin (BTC) $45000");
     const ethereumName = screen.getByText("Ethereum (ETH) $3000");
@@ -77,8 +73,7 @@ test("handles removing a coin from watchlist", async () => {
   const bitcoinRemoveButton = screen.getByText("Remove");
   fireEvent.click(bitcoinRemoveButton);
 
-  // Wait for the removeFromWatchlist function to be called
   await waitFor(() => {
-    expect(OtbcApi.removeFromWatchlist).toHaveBeenCalledWith(1, 1); // Assuming coin_id 1 corresponds to Bitcoin
+    expect(OtbcApi.removeFromWatchlist).toHaveBeenCalledWith(1, 1); 
   });
 });

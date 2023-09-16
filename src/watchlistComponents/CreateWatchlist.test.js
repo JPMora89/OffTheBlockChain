@@ -38,17 +38,15 @@ test("submits form and creates a watchlist", async () => {
   fireEvent.change(watchlistNameInput, { target: { value: "New Watchlist" } });
   fireEvent.click(createButton);
 
-  // Wait for the createWatchlist function to be called
   await waitFor(() => {
     expect(OtbcApi.createWatchlist).toHaveBeenCalledWith("New Watchlist");
   });
 
-  // Wait for the updateWatchlist function to be called
   await waitFor(() => {
     expect(mockUpdateWatchlist).toHaveBeenCalled();
   });
 
-  expect(watchlistNameInput.value).toBe(""); // Check if the input field is cleared
+  expect(watchlistNameInput.value).toBe("");
 });
 
 test("handles create watchlist error", async () => {
@@ -62,11 +60,9 @@ test("handles create watchlist error", async () => {
   fireEvent.change(watchlistNameInput, { target: { value: "New Watchlist" } });
   fireEvent.click(createButton);
 
-  // Wait for the error message to be displayed
   await waitFor(() => {
     expect(screen.getByText(errorMessage)).toBeInTheDocument();
   });
 
-  // Ensure updateWatchlist function is not called
   expect(mockUpdateWatchlist).not.toHaveBeenCalled();
 });

@@ -5,10 +5,9 @@ import KnowledgeTopicList from "./KnowledgeTopics";
 
 const KnowledgePage = ({ knowledgeTopics }) => {
   const { topicId } = useParams();
-  //   const topic = knowledgeTopics.find((topic) => topic.id === parseInt(topicId));
   const topic = knowledgeTopics.find(
     (topic) => topic.topicId === parseInt(topicId)
-  ); // Update the comparison here
+  ); 
   console.log("topicId:", topicId);
   console.log("knowledgeTopics:", knowledgeTopics);
 

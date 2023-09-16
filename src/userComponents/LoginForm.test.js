@@ -17,7 +17,6 @@ describe('LoginForm', () => {
     const mockLogin = jest.fn();
     render(<LoginForm login={mockLogin} />);
     
-    // Simulate user input
     fireEvent.change(screen.getByPlaceholderText('Username'), {
       target: { value: 'testuser' },
     });
@@ -25,10 +24,8 @@ describe('LoginForm', () => {
       target: { value: 'password123' },
     });
     
-    // Simulate form submission
     fireEvent.click(screen.getByText('Login'));
 
-    // Assert that the login function is called with the correct data
     expect(mockLogin).toHaveBeenCalledWith({
       username: 'testuser',
       password: 'password123',
@@ -39,7 +36,6 @@ describe('LoginForm', () => {
     const mockLogin = jest.fn();
     render(<LoginForm login={mockLogin} />);
     
-    // Simulate user input
     fireEvent.change(screen.getByPlaceholderText('Username'), {
       target: { value: 'testuser' },
     });
@@ -47,10 +43,8 @@ describe('LoginForm', () => {
       target: { value: 'password123' },
     });
     
-    // Simulate form submission
     fireEvent.click(screen.getByText('Login'));
 
-    // Assert that form inputs are cleared
     expect(screen.getByPlaceholderText('Username').value).toBe('');
     expect(screen.getByPlaceholderText('Password').value).toBe('');
   });

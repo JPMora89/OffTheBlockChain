@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import axios from "axios"; // Import axios for mocking API calls
+import axios from "axios"; 
 import CoinNews from "./CoinNews";
 import OtbcApi from "../api";
 
-jest.mock("axios"); // Mock axios for API requests
-jest.mock("../api"); // Mock the custom API module
+jest.mock("axios"); 
+jest.mock("../api");
 
 describe("CoinNews", () => {
   const mockCoinId = "bitcoin";

@@ -32,18 +32,13 @@ const Homepage = () => {
           market data, and keep track of your favorite cryptocurrencies.
      </p>
         <div className="explore-more-container">
-          {/* <Link id="exploremore" to="/cointable" className="styled-link">
-            Explore More
-          </Link> */}
-   
+    
 
         </div>
       </section>
       <header className="header">
         <h2 id="homepageheader">Welcome to Off the Blockchain</h2>
-        {/* <p id="homepageheadersentence">
-          Explore the world of cryptocurrencies and blockchain technology
-        </p>         */}
+
       </header>
       <section className="section">
         <img src={purpleearth} alt="blockchainLink" id="blockchainLink" />
