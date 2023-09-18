@@ -2,6 +2,33 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Images
+
+![Screenshot 2023-09-04 at 21-51-37 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/c341bd00-a6e7-4bd4-9e20-c71c6ef85d0a)
+![Screenshot 2023-09-15 at 23-02-51 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/e6cd959f-cca7-4cd7-9f06-01a0cb9281aa)
+![Screenshot 2023-09-15 at 23-03-49 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/4f01ff34-2793-415d-b317-3f5a90f72aa4)
+![Screenshot 2023-09-15 at 23-04-26 React App](https://github.com/JPMora89/OffTheBlockChain/assets/110551396/3fbe435c-1c30-4b3c-ba13-5243b139b470)
+
+
+
+
+
+
+## Details about the application
+A full-stack application allowing users to get up-to-date information on the top 25 cryptocurrencies by market-cap. Users are able to create and add coins to different watchlists to help keep track of price movements.
+
+## Features
+
+Users can register an account and gain the ability to track the latest and most pertinent details concerning the leading cryptocurrency coins available in the market. Each user can establish multiple watchlists tailored to specific coin selections, each serving distinct purposes. Additionally, our knowledge section equips users with valuable insights to make well-informed decisions as they embark on their journey in this domain. Furthermore, our latest news section ensures users stay completely up-to-date with the most recent developments in the cryptocurrency space.
+
+## URL
+
+https://offtheblockchain-o0xy.onrender.com/
+
+## API's
+
+The API's used in this app are the coingecko API to receive the most recent coin prices as well as coin news API which retrieves the latest coins news.  
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -15,6 +42,8 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ### `npm test`
+
+There are tests for all the components, just launch with "npm test"
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
