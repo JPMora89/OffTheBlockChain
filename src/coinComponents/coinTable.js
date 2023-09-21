@@ -33,17 +33,17 @@ const CoinTable = () => {
     fetchAllWatchlists();
   }, []);
 
-  // const addCoinstoDB = async () => {
-  //   try {
-  //     const response = await OtbcApi.addAllCoinstoDB();
-  //   } catch (error) {
-  //     console.error("Error adding coins to DB:", error);
-  //   }
-  // };
+  const addCoinstoDB = async () => {
+    try {
+      const response = await OtbcApi.addAllCoinstoDB();
+    } catch (error) {
+      console.error("Error adding coins to DB:", error);
+    }
+  };
 
-  // useEffect(() => {
-  //   addCoinstoDB();
-  // }, []);
+  useEffect(() => {
+    addCoinstoDB();
+  }, []);
 
   useEffect(() => {
     const fetchTrendingCoins = async () => {
